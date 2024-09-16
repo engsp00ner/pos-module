@@ -1,0 +1,109 @@
+{
+    "products":[
+        {
+            "id":1,
+            "name":"بسكوت لوكس ",
+            "price":"5",
+            "image":"snacks/lux.jpg",
+            "category":"snacks"
+        },
+        {
+            "id":2,
+            "name":"بسكوت بسكريم ",
+            "price":"5",
+            "image":"snacks/biscrem.jpg",
+            "category":"snacks"
+        },
+        {
+            "id":3,
+            "name":"بسكوت ماكفيتس ",
+            "price":"5",
+            "image":"snacks/macvites.jpg",
+            "category":"snacks"
+        },
+        {
+            "id":4,
+            "name":" شبسي ",
+            "price":"5",
+            "image":"snacks/chips.jpg",
+            "category":"snacks"
+            
+        },
+
+        {
+            "id":5,
+            "name":" كونو ",
+            "price":"5",
+            "image":"snacks/cono.jpg",
+            "category":"snacks"
+            
+        },
+
+        {
+            "id":6,
+            "name":" كرانشي ",
+            "price":"5",
+            "image":"snacks/cranche.jpg",
+            "category":"snacks"
+            
+        },
+        {
+            "id":7,
+            "name":"سندوتش طعميه ",
+            "price":"7",
+            "image":"food/sandwich3.jpg",
+            "category":"food"
+            
+        },
+        {
+            "id":8,
+            "name":"سندوتش كبدة ",
+            "price":"10",
+            "image":"food/sandwich.jpg",
+            "category":"food"
+            
+        },
+        {
+            "id":9,
+            "name":"سندوتش فول ",
+            "price":"10",
+            "image":"food/sandwich2.jpg",
+            "category":"food"
+            
+        },
+        {
+            "id":10,
+            "name":"شاي",
+            "price":"5",
+            "image":"drinks/tea.png",
+            "category":"drinks"
+            
+        },
+        {
+            "id":11,
+            "name":"قهوة",
+            "price":"7",
+            "image":"drinks/coffe.png",
+            "category":"drinks"
+            
+        },
+        {
+            "id":12,
+            "name":"كوفي بريك",
+            "price":"10",
+            "image":"drinks/coffebreak.jpg",
+            "category":"drinks"
+            
+        },
+        {
+            "id":13,
+            "name":" نسكافيه",
+            "price":"10",
+            "image":"drinks/nescafe.png",
+            "category":"drinks"
+            
+        }
+
+
+    ]
+}
