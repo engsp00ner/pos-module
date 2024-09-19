@@ -9,10 +9,10 @@ module.exports = {
   ],
   parserOptions: {
     project: "./tsconfig.eslint.json",
-    ecmaVersion: 2020,
-    sourceType: "module",
+    ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
+    sourceType: "module", // Allows for the use of imports
     ecmaFeatures: {
-      jsx: true,
+      jsx: true, // Allows for the parsing of JSX
     },
   },
   plugins: [
@@ -30,6 +30,7 @@ module.exports = {
     "react/no-array-index-key": "off",
     'jsx-a11y/control-has-associated-label': 'off',
     'jsx-a11y/anchor-is-valid': 'off',
+    "no-console": "off", // Disable the no-console rule
     "jsx-a11y/no-noninteractive-element-to-interactive-role": "off",
     "no-param-reassign": [
       "error",
