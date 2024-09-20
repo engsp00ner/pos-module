@@ -1,15 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit';
 import sidebarReducer from './features/SideBar/SideBarSlice';
 import authReducer from './features/Auth/authSlice';
-import FullScreenReducer from './features/MainSlice/fullScreenSlice';
+import fullScreenReducer from './features/MainSlice/fullScreenSlice';
 import orderReducer from './features/orders/orderSlice';
+import mainCardCategoryReducer from './features/MainSlice/MainCardCategoryslice';
 
 export const store = configureStore({
   reducer: {
     sidebar: sidebarReducer,
     auth: authReducer,
-    fullScreen: FullScreenReducer,
+    fullScreen: fullScreenReducer,
     order: orderReducer,
+    mainCardCategory: mainCardCategoryReducer,
   },
 });
 

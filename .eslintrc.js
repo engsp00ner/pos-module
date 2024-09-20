@@ -15,6 +15,7 @@ module.exports = {
       jsx: true, // Allows for the parsing of JSX
     },
   },
+ 
   plugins: [
     '@typescript-eslint',
     'import',
@@ -22,6 +23,8 @@ module.exports = {
   ],
   rules: {
     "prettier/prettier": "error",
+    'jsx-a11y/no-static-element-interactions': 'off', //no-static-element-interactions
+    'jsx-a11y/click-events-have-key-events': 'off', //click-events-have-key-events
     "linebreak-style": ["error", "unix"],
     "import/prefer-default-export": "off",
     "react/require-default-props": "off",
@@ -51,4 +54,15 @@ module.exports = {
       version: 'detect',
     },
   },
+  overrides: [
+    {
+      // Override for JavaScript files
+      files: ['*.js', '*.jsx'],
+      parser: 'espree', // Use the default JavaScript parser for JS files
+      parserOptions: {
+        ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
+        sourceType: "module", // Allows for the use of imports
+      },
+    },
+  ],
 };

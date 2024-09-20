@@ -1,8 +1,8 @@
-/* eslint-disable no-console */
-import { Link } from 'react-feather';
-import { useDispatch } from 'react-redux';
+import { Link, ShoppingCart } from 'react-feather';
+import { useDispatch, useSelector } from 'react-redux';
 import { addItem } from '../../features/orders/orderSlice';
 import '../../CustomStyle/DropDownMenuStyle.css';
+import { RootState } from '../../Store';
 
 interface Props {
   ImgUrl?: string;
@@ -19,20 +19,31 @@ export const CardItem: React.FC<Props> = ({
   ProductDescription = '',
 }) => {
   const dispatch = useDispatch();
+  // Get the order items from the Redux store
+  const orderItems = useSelector((state: RootState) => state.order.items);
   const handleOnClick = () => {
+    // Check if the item already exists in the cart
+    const existingItem = orderItems.find(
+      (item) => item.id.toString() === itemkey.toString()
+    );
+
+    // If the item exists, increment its amount, otherwise set amount to 1
+    const itemAmount = existingItem ? existingItem.ItemAmount + 1 : 1;
     const product = {
-      id: itemkey,
+      id: itemkey.toString(),
       name: ProductName,
       price: ItemPrice,
       image: ImgUrl,
+      ItemAmount: itemAmount, // Use the updated item amount
     };
     console.log({
       id: itemkey, // Assuming 'itemkey' represents the product's ID
       name: ProductName,
       price: ItemPrice,
       image: ImgUrl,
+      ItemAmount: itemAmount, // Use the updated item amount
     });
-    // Dispatch the addItem action
+    // Dispatch the addItem action  with the updated amount
     dispatch(addItem(product));
   };
   return (
@@ -42,21 +53,18 @@ export const CardItem: React.FC<Props> = ({
           <div className="fx-card-avatar fx-overlay-1">
             <img src={ImgUrl} alt="user" style={{ height: '200px' }} />
 
-            <div className="fx-overlay scrl-up">
+            <div
+              className="fx-overlay scrl-up"
+              style={{ cursor: 'pointer' }}
+              onClick={() => handleOnClick()}
+            >
               <ul className="fx-info">
                 <li>
                   <Link
                     className="btn btn-outline image-popup-vertical-fit"
                     onClick={() => handleOnClick()}
                   >
-                    <svg
-                      height="1em"
-                      viewBox="0 0 576 512"
-                      fill="rgb(17, 17, 17)"
-                      className="cart"
-                    >
-                      <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
-                    </svg>
+                    <ShoppingCart />
                   </Link>
                 </li>
               </ul>
@@ -65,7 +73,7 @@ export const CardItem: React.FC<Props> = ({
           <div className="fx-card-content text-right mb-0">
             <h3 className="product-text">{ProductDescription}</h3>
             <h4 className="box-title mb-0">{ProductName}</h4>
-            <h2 className="pro-price text-blue">{ItemPrice}</h2>
+            <h2 className="pro-price text-blue ">{ItemPrice}</h2>
           </div>
         </div>
       </div>

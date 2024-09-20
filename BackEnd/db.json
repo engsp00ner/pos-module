@@ -5,28 +5,44 @@
             "name":"بسكوت لوكس ",
             "price":"5",
             "image":"snacks/lux.jpg",
-            "category":"snacks"
+            "category":{
+                "type":"snacks",
+                "displayName":"بسكوت و شبسي",
+        "CategoryImage":"/assets/itemImages/Category/snacks.svg"
+            }
         },
         {
             "id":2,
             "name":"بسكوت بسكريم ",
             "price":"5",
             "image":"snacks/biscrem.jpg",
-            "category":"snacks"
+           "category":{
+                "type":"snacks",
+                "displayName":"بسكوت و شبسي",
+        "CategoryImage":"/assets/itemImages/Category/snacks.svg"
+            }
         },
         {
             "id":3,
             "name":"بسكوت ماكفيتس ",
             "price":"5",
             "image":"snacks/MacVites.png",
-            "category":"snacks"
+            "category":{
+                "type":"snacks",
+                "displayName":"بسكوت و شبسي",
+        "CategoryImage":"/assets/itemImages/Category/snacks.svg"
+            }
         },
         {
             "id":4,
             "name":" شبسي ",
             "price":"5",
             "image":"snacks/chips.jpg",
-            "category":"snacks"
+           "category":{
+                "type":"snacks",
+                "displayName":"بسكوت و شبسي",
+        "CategoryImage":"/assets/itemImages/Category/snacks.svg"
+            }
             
         },
 
@@ -35,7 +51,12 @@
             "name":" كونو ",
             "price":"5",
             "image":"snacks/cono.jpg",
-            "category":"snacks"
+            "category":{
+                "type":"snacks",
+                "displayName":"بسكوت و شبسي",
+        "CategoryImage":"/assets/itemImages/Category/snacks.svg"
+            }
+        
             
         },
 
@@ -44,7 +65,11 @@
             "name":" كرانشي ",
             "price":"5",
             "image":"snacks/cranche.jpg",
-            "category":"snacks"
+            "category":{
+                "type":"snacks",
+                "displayName":"بسكوت و شبسي",
+        "CategoryImage":"/assets/itemImages/Category/snacks.svg"
+            }
             
         },
         {
@@ -52,15 +77,22 @@
             "name":"سندوتش طعميه ",
             "price":"7",
             "image":"food/sandwich3.jpg",
-            "category":"food"
-            
+            "category":{
+                "type":"food",
+                "displayName":"مأكولات",
+        "CategoryImage":"/assets/itemImages/Category/FoodColoured.svg"
+            }
         },
         {
             "id":8,
             "name":"سندوتش كبدة ",
             "price":"10",
             "image":"food/sandwich.jpg",
-            "category":"food"
+            "category":{
+                "type":"food",
+                "displayName":"مأكولات",
+        "CategoryImage":"/assets/itemImages/Category/FoodColoured.svg"
+            }
             
         },
         {
@@ -68,7 +100,11 @@
             "name":"سندوتش فول ",
             "price":"10",
             "image":"food/sandwich2.jpg",
-            "category":"food"
+            "category":{
+                "type":"food",
+                "displayName":"مأكولات",
+        "CategoryImage":"/assets/itemImages/Category/FoodColoured.svg"
+            }
             
         },
         {
@@ -76,7 +112,11 @@
             "name":"شاي",
             "price":"5",
             "image":"drinks/tea.png",
-            "category":"drinks"
+           "category":{
+                "type":"drinks",
+                "displayName":"مشروبات",
+        "CategoryImage":"/assets/itemImages/Category/drinksColoured.svg"
+            }
             
         },
         {
@@ -84,7 +124,11 @@
             "name":"قهوة",
             "price":"7",
             "image":"drinks/coffe.png",
-            "category":"drinks"
+           "category":{
+                "type":"drinks",
+                "displayName":"مشروبات",
+        "CategoryImage":"/assets/itemImages/Category/drinksColoured.svg"
+            }
             
         },
         {
@@ -92,7 +136,11 @@
             "name":"كوفي بريك",
             "price":"10",
             "image":"drinks/coffebreak.jpg",
-            "category":"drinks"
+            "category":{
+                "type":"drinks",
+                "displayName":"مشروبات",
+        "CategoryImage":"/assets/itemImages/Category/drinksColoured.svg"
+            }
             
         },
         {
@@ -100,7 +148,11 @@
             "name":" نسكافيه",
             "price":"10",
             "image":"drinks/nescafe.png",
-            "category":"drinks"
+           "category":{
+                "type":"drinks",
+                "displayName":"مشروبات",
+        "CategoryImage":"/assets/itemImages/Category/drinksColoured.svg"
+            }
             
         }
 
