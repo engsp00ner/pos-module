@@ -24,7 +24,6 @@ interface Product {
 const MainCardArea: React.FC = () => {
   const [Products, SetProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [CurrentBalance, SetCurrentBalance] = useState(0);
   // Get the selected category from Redux store
   const selectedCategory = useSelector(
     (state: RootState) =>
@@ -37,9 +36,12 @@ const MainCardArea: React.FC = () => {
       }
   );
   // console.log('selectedCategory', selectedCategory);
-
+  const currentBalance = useSelector(
+    (state: RootState) => state.order.currentBalance
+  );
   const fetchProducts = async () => {
     setIsLoading(true); // Start loading
+
     try {
       // Fetch products from the backend
       const result = await axios.get('http://localhost:3001/api/products');
@@ -49,6 +51,7 @@ const MainCardArea: React.FC = () => {
       // console.log('rawResult', result.data[0]?.products);
       // Update the products state with the fetched data
       SetProducts(productsArray);
+      console.log('CurrentBalanceOrderTable:', currentBalance);
     } catch (error) {
       // Log any errors to the console
       console.error('Error fetching products:', error);
@@ -112,7 +115,7 @@ const MainCardArea: React.FC = () => {
             />
           ))}
         </div>
-        <Balance CurrentBalance={CurrentBalance} openingBalance={200} />
+        <Balance CurrentBalance={currentBalance} openingBalance={200} />
       </div>
       <div className="row">
         <div className="row fx-element-overlay">
@@ -138,7 +141,7 @@ const MainCardArea: React.FC = () => {
           )}
           {/* order table section */}
           <div className="col-lg-6 col-md-6">
-            <OrderTable SetCurrentBalance={SetCurrentBalance} />
+            <OrderTable />
           </div>
         </div>
       </div>

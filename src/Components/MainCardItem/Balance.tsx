@@ -1,9 +1,15 @@
+import { useEffect } from 'react';
+
 interface Props {
   openingBalance: number;
   CurrentBalance: number;
 }
 
 const Balance: React.FC<Props> = ({ openingBalance, CurrentBalance }) => {
+  useEffect(() => {
+    // Re-render when CurrentBalance changes
+    console.log('Current balance changed:', CurrentBalance);
+  }, [CurrentBalance]); // Runs whenever CurrentBalance or newOrder changes
   return (
     //  opening  balance
 

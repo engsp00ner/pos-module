@@ -1,15 +1,20 @@
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { RootState } from '../../Store'; // Adjust the import path as needed
 import { TableRaw } from './TableRaw';
 import { AddButton } from './AddButton';
-import { resetOrder, updateItemAmount } from '../../features/orders/orderSlice';
+import {
+  resetOrder,
+  updateItemAmount,
+  setCurrentBalance,
+} from '../../features/orders/orderSlice';
+import './CancelButton.css';
 
-interface Props {
-  SetCurrentBalance: (balance: number) => void;
-}
-export const OrderTable: React.FC<Props> = ({ SetCurrentBalance }) => {
+export const OrderTable: React.FC = () => {
+  const currentBalance = useSelector(
+    (state: RootState) => state.order.currentBalance
+  );
   // Get the items from the Redux store
   const orderItems = useSelector((state: RootState) => state.order.items);
   // use the dispatch to get from the store
@@ -29,6 +34,7 @@ export const OrderTable: React.FC<Props> = ({ SetCurrentBalance }) => {
   // Set the time of today and yesterday to midnight (start of the day)
   startDate.setHours(0, 0, 0, 0);
   endDate.setHours(0, 0, 0, 0);
+  // get the current balance for the period
 
   const getTotalAmountForPeriod = async () => {
     try {
@@ -39,12 +45,20 @@ export const OrderTable: React.FC<Props> = ({ SetCurrentBalance }) => {
         }
       );
       console.log(`startDate:${startDate}`);
+      console.log(`startDate:${endDate}`);
       console.log('Total amount:', response.data.totalAmount);
-      SetCurrentBalance(response.data.totalAmount);
+      dispatch(setCurrentBalance(response.data.totalAmount));
+      console.log('CurrentBalance :', currentBalance);
     } catch (error) {
       console.error('Error fetching total amount:', error);
     }
   };
+
+  // Fetch balance and update whenever CurrentBalance changes
+  useEffect(() => {
+    getTotalAmountForPeriod();
+  });
+
   // Handle updating the item amount
   const handleAmountChange = (id: string, newAmount: number) => {
     // Dispatch an action to update the item amount in the Redux store
@@ -72,6 +86,8 @@ export const OrderTable: React.FC<Props> = ({ SetCurrentBalance }) => {
     };
     getTotalAmountForPeriod();
 
+    // add total amount function
+
     console.log('Order Data:', orderData);
     try {
       // Send a POST request to the backend API to save the order
@@ -83,12 +99,17 @@ export const OrderTable: React.FC<Props> = ({ SetCurrentBalance }) => {
       SetIsLoading(false);
       console.log('Order saved successfully:', response.data);
       // Reset the order items after the successful order
-      dispatch(resetOrder());
+      dispatch(resetOrder(this));
     } catch (error) {
       console.error('Error saving order:', error);
     } finally {
       SetIsLoading(false);
     }
+  };
+
+  // Delete Function
+  const HandleDeleteOrder = () => {
+    dispatch(resetOrder(this));
   };
   return (
     <>
@@ -149,7 +170,20 @@ export const OrderTable: React.FC<Props> = ({ SetCurrentBalance }) => {
                     </tr>
                   </tbody>
                 </table>
-                <AddButton onClick={HandleAddOrder} /> {/* Corrected onClick */}
+                <div className="row justify-content-between">
+                  <div className="col-auto">
+                    <AddButton onClick={HandleAddOrder} />
+                  </div>
+                  <div className="col-auto">
+                    <button
+                      className="button-cancel"
+                      type="button"
+                      onClick={HandleDeleteOrder}
+                    >
+                      حذف الطلب
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

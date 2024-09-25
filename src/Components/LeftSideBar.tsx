@@ -52,13 +52,9 @@ export const LeftSideBar: React.FC<SideProps> = () => {
             <ul className="sidebar-menu tree" data-widget="tree">
               <UserProfile />
 
-              <SideBarItem
-                text="Dashboard "
-                link="index.html"
-                classname="header"
-              />
+              <SideBarItem text="Dashboard " link="#" classname="header" />
 
-              <SideBarItem text="Dashboard 1" link="index.html">
+              <SideBarItem text="الصفحة الرئيسية" link="/">
                 <ShoppingCart size={26} />
               </SideBarItem>
 
@@ -69,11 +65,11 @@ export const LeftSideBar: React.FC<SideProps> = () => {
                 classname="header"
               />
 
-              <SideBarItem text="chat" link="contact_app_chat.html">
+              <SideBarItem text="المنتجات" link="Listallorders">
                 <MessageCircle size={26} />
               </SideBarItem>
 
-              <SideBarItem text="Todo" link="extra_taskboard.html">
+              <SideBarItem text="جميع الطلبات " link="AllOrderLayOut">
                 <Clipboard />
               </SideBarItem>
 

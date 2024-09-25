@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { SideBarToggleButton } from './SideBar/SideBarToggleButton';
 import { Notifications } from './Notifications';
 
@@ -11,12 +12,19 @@ const Header: React.FC<Props> = ({ children }) => {
     <header className="main-header">
       <div className="d-flex align-items-center logo-box justify-content-between">
         {/* logo */}
+        <Link to="/">
+          <div className="logo-lg">
+            <span className="light-logo">
+              <img src="/assets/itemImages/logo1.png" alt="logo " />
+            </span>
+          </div>
+        </Link>
+        {/* Sidebar toggle button */}
         <SideBarToggleButton />
       </div>
 
       {/* Header Navbar */}
       <nav className="navbar navbar-static-top pl-10">
-        {/* Sidebar toggle button */}
         <div className="app-menu">{children}</div>
 
         <div className="navbar-custom-menu r-side">

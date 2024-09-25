@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction, Slice } from '@reduxjs/toolkit';
 
 // Define the shape of an order item
 interface OrderItem {
@@ -12,15 +12,17 @@ interface OrderItem {
 // Define the initial state type
 interface OrderState {
   items: OrderItem[];
+  currentBalance: number; // Add currentBalance to the state
 }
 
 // Initial state
 const initialState: OrderState = {
   items: [],
+  currentBalance: 0, // Initial balance is set to 0
 };
 
 // Create the slice
-export const orderSlice = createSlice({
+export const orderSlice: Slice<OrderState> = createSlice({
   name: 'order',
   initialState,
   reducers: {
@@ -54,15 +56,29 @@ export const orderSlice = createSlice({
       state.items = state.items.filter((item) => item.id !== action.payload);
     },
     // reset the order to initial state
-    resetOrder: (state) => {
+    resetOrder: (state: OrderState) => {
       state.items = []; // Reset the items to an empty array
+    },
+    // Set the current balance
+    setCurrentBalance: (state, action: PayloadAction<number>) => {
+      state.currentBalance = action.payload; // Update the current balance
+    },
+    // Reset the current balance
+    resetCurrentBalance: (state) => {
+      state.currentBalance = 0; // Reset the current balance to 0
     },
   },
 });
 
 // Export the action
-export const { addItem, updateItemAmount, deleteItem, resetOrder } =
-  orderSlice.actions;
+export const {
+  addItem,
+  updateItemAmount,
+  deleteItem,
+  resetOrder,
+  setCurrentBalance,
+  resetCurrentBalance,
+} = orderSlice.actions;
 
 // Export the reducer
 export default orderSlice.reducer;

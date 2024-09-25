@@ -1,0 +1,7 @@
+.custom-table .ant-table-thead > tr > th { 
+    background-color: #81c2e6; /* Example gradient */ 
+    font-size: 1.5em;           /* Example font size */
+    text-align:center;
+    font-weight: bold;
+    color: whitesmoke;
+  }
