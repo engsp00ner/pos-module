@@ -9,6 +9,7 @@ import { store } from './Store';
 import MainLayout from './Components/MainLayOut';
 import AllOrderLayOut from './Components/EditOrders/AllOrderLayOut';
 import ListAllProductsPage from './Pages/ListAllProductsPage';
+import PopUpBase from './Components/popupwindow/PopUpBase';
 
 const App: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const App: React.FC = () => {
             <Route path="/AdminDashBoard" element={<AdminDashBoard />} />
             <Route path="/AllOrderLayOut" element={<AllOrderLayOut />} />
             <Route path="/AllProducts" element={<ListAllProductsPage />} />
+            <Route path="/popupbase" element={<PopUpBase />} />
           </Route>
         </Routes>
       </Provider>

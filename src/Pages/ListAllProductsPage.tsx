@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { Table } from 'antd';
-import type { TableColumnsType, TableProps } from 'antd';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Table, type TableColumnsType, type TableProps } from 'antd';
 import '../CustomStyle/AllOrdersTable.css';
 import { AlertFilled } from '@ant-design/icons';
+import axios from 'axios';
 import TrashButton from '../Components/TrashButton';
 import EditButton from '../Components/EditButton';
+import PopUpBase from '../Components/popupwindow/PopUpBase';
 
 type TableRowSelection<T extends Record<string, unknown>> =
   TableProps<T>['rowSelection'];
@@ -18,20 +18,42 @@ interface DataType extends Record<string, unknown> {
   amount: React.ReactNode;
   edit: React.ReactNode;
 }
+
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  productamount: number;
+  category: {
+    type: string;
+    displayName: string;
+    CategoryImage: string;
+  };
+}
+
 // table colums
 const columns: TableColumnsType<DataType> = [
   {
     title: 'أسم المنتج',
     dataIndex: 'Productname',
     width: 240,
-    render: (text) => (
-      <span
-        style={{
-          fontSize: '1.2em', // Adjust font size as needed
-        }}
-      >
-        {text}
-      </span>
+    render: (text, record) => (
+      <>
+        <img
+          src={BaseImgUrl + record.image}
+          style={{ width: '50px' }}
+          alt="not found"
+        />
+        <span
+          style={{
+            fontSize: '1.2em', // Adjust font size as needed
+            fontWeight: 'bold',
+          }}
+        >
+          {text}
+        </span>
+      </>
     ),
   },
   {
@@ -41,7 +63,9 @@ const columns: TableColumnsType<DataType> = [
     render: (text) => (
       <span
         style={{
-          fontSize: '1.2em', // Adjust font size as needed
+          fontSize: '2rem', // Adjust font size as needed
+          alignItems: 'center',
+          textAlign: 'center',
         }}
       >
         {text}
@@ -53,22 +77,28 @@ const columns: TableColumnsType<DataType> = [
     title: 'التصنيف',
     dataIndex: 'category',
     width: 240,
+    render: (text, record) => (
+      <>
+        <img
+          src={`${record.categoryimage}`}
+          style={{ width: '40px' }}
+          alt="not found"
+        />
+        <span
+          style={{
+            fontSize: '1.2em', // Adjust font size as needed
+            fontWeight: 'bold',
+          }}
+        >
+          {text}
+        </span>
+      </>
+    ),
   },
   {
     title: 'الكـميه المتاحه',
     dataIndex: 'amount',
     width: 180,
-    render: (text, record, index) => (
-      <span
-        style={{
-          fontSize: '1.2em', // Adjust font size as needed
-          color: index > 5 ? 'green' : 'red', // Conditional color
-          textAlign: 'center',
-        }}
-      >
-        {text}
-      </span>
-    ),
   },
   {
     title: '',
@@ -85,32 +115,82 @@ const columns: TableColumnsType<DataType> = [
     ),
   },
 ];
+
+const BaseImgUrl = '/assets/itemImages/products/';
+
 const handleEditOrder = () => {
   console.log('Edit Clicked');
 };
+
 const handleDeleteOrder = () => {
   console.log('Delete Clicked');
 };
 
-const dataSource = Array.from({ length: 46 }).map<DataType>((_, i) => ({
-  key: i,
-  Productname: `Edward King ${i}`,
-  Price: 32,
-  category: `London, Park Lane no. ${i}`,
-  amount: (
-    <div>
-      {i} <AlertFilled />
-    </div>
-  ),
-  edit: (
-    <div className="row">
-      <EditButton HandleClicked={handleEditOrder} />
-      <TrashButton HandleDeleteClicked={handleDeleteOrder} />
-    </div>
-  ),
-}));
-
 const ListAllProducts: React.FC = () => {
+  const [products, SetProducts] = useState<Product[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Fetch products on component mount
+
+  // fetch data from database
+  const fetchProducts = async () => {
+    setIsLoading(true); // Start loading
+
+    try {
+      // Fetch products from the backend
+      const result = await axios.get('http://localhost:3001/api/products');
+
+      // Assuming the response has a structure like { _id: ..., products: [...] }
+      const productsArray = result.data[0]?.products;
+      console.log('productsArray', productsArray);
+
+      // Update the products state with the fetched data
+      await SetProducts(productsArray);
+      console.log('productsArray fetch', products);
+    } catch (error) {
+      // Log any errors to the console
+      console.error('Error fetching products:', error);
+    } finally {
+      setIsLoading(false); // End loading
+    }
+  };
+  useEffect(() => {
+    fetchProducts();
+    console.log('Date', Date.now());
+    console.log('productsArray use effect:', products);
+  }, []); // Empty dependency array ensures this runs once on mount
+
+  const dataSource = products.map((product, i) => ({
+    key: i,
+    Productname: product.name,
+    image: product.image, // Add the image URL as a separate property
+    Price: product.price,
+    category: product.category.displayName, //  display the category's display name
+    categoryimage: product.category.CategoryImage, // display the category's display image
+    amount: (
+      <div
+        style={{
+          textAlign: 'center',
+          color: product.productamount > 10 ? 'green' : 'red',
+        }}
+      >
+        {product.productamount} <AlertFilled />
+      </div>
+    ),
+    edit: (
+      <div
+        className="row"
+        style={{
+          textAlign: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <EditButton HandleClicked={handleEditOrder} />
+        <TrashButton HandleDeleteClicked={handleDeleteOrder} />
+      </div>
+    ),
+  }));
+
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
 
   const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
@@ -157,12 +237,22 @@ const ListAllProducts: React.FC = () => {
   };
 
   return (
-    <Table<DataType>
-      rowSelection={rowSelection}
-      columns={columns}
-      dataSource={dataSource}
-      className="custom-table" // Add a custom class to the table
-    />
+    <div>
+      {' '}
+      {/* Added a wrapping div */}
+      {isLoading ? (
+        <h1>Loading ... </h1>
+      ) : (
+        <div>
+          <Table<DataType>
+            rowSelection={rowSelection}
+            columns={columns}
+            dataSource={dataSource}
+            className="custom-table"
+          />
+        </div>
+      )}
+    </div>
   );
 };
 

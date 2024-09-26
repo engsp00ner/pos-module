@@ -76,4 +76,13 @@ router.delete('/categories/:id', async (req, res) => {
   }
 });
 
+// READ: Get distinct categories (new route)
+router.get('/categories/distinct', async (req, res) => {
+  try {
+    const distinctCategories = await Category.distinct('type'); 
+    res.status(200).json(distinctCategories);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching distinct categories', error });
+  }
+});
 module.exports = router;
