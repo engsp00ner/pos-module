@@ -1,5 +1,5 @@
 const express = require('express');
-const Category = require('./categoryModel'); // Import the Mongoose model
+const Category = require('../models/category'); // Import the Mongoose model
 
 const router = express.Router();
 

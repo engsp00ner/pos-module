@@ -5,6 +5,7 @@ const cors = require('cors'); // Import cors
 
 const OrderRoutes = require("./routes/OrderRoutes"); //orders Route
 const productRoutes = require("./routes/ProductRoutes"); //Product Routes
+const CategoryRoutes =require("./routes/CategoryRoutes"); //category route
 dotenv.config();
 
 const app = express();
@@ -25,12 +26,18 @@ mongoose.connect(process.env.MONGODB_URI )
 // Middleware
 app.use(express.json());
 
+//allow users to access uploaded images through URLs.
+app.use('/assets', express.static('public/assets'));
+
 // Routes
 //product routes
 app.use('/api', productRoutes);
 
 //orders Route
-app.use('/api/orders', OrderRoutes);
+app.use('/api', OrderRoutes);
+
+//category routes
+app.use('/api', CategoryRoutes);
 
 // Start the server
 app.listen(PORT, () => {

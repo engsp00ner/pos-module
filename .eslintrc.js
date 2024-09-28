@@ -22,6 +22,13 @@ module.exports = {
     'prettier',
   ],
   rules: {
+    "@typescript-eslint/no-explicit-any": [
+      "error", 
+      {
+        "fixToUnknown": true, 
+        "ignoreRestArgs": false
+      }
+    ],
     "prettier/prettier": "error",
     'jsx-a11y/no-static-element-interactions': 'off', //no-static-element-interactions
     'jsx-a11y/click-events-have-key-events': 'off', //click-events-have-key-events

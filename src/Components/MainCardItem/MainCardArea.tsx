@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
-import { OrderTable } from '../OrderTable/OrderTable';
+import { OrderTable } from '../../orders/OrderTable/OrderTable';
 import { CardItem } from './CardItem';
 import OrderCategory from './OrderCategory';
 import { RootState } from '../../Store';
@@ -17,13 +17,19 @@ interface Product {
   category: {
     type: string;
     displayName: string;
-    CategoryImage: string;
+    categoryImage: string;
   };
 }
-
+interface Category {
+  type: string;
+  displayName: string;
+  categoryImage: string;
+}
 const MainCardArea: React.FC = () => {
   const [Products, SetProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [categories, setCategories] = useState<Category[]>([]);
+
   // Get the selected category from Redux store
   const selectedCategory = useSelector(
     (state: RootState) =>
@@ -31,7 +37,7 @@ const MainCardArea: React.FC = () => {
         category: {
           displayName: 'كل المنتجات ',
           type: 'all',
-          CategoryImage: '/assets/itemImages/Category/AllProducts',
+          categoryImage: '/assets/itemImages/Category/AllProducts',
         },
       }
   );
@@ -39,6 +45,8 @@ const MainCardArea: React.FC = () => {
   const currentBalance = useSelector(
     (state: RootState) => state.order.currentBalance
   );
+
+  // fetch products from api
   const fetchProducts = async () => {
     setIsLoading(true); // Start loading
 
@@ -47,7 +55,7 @@ const MainCardArea: React.FC = () => {
       const result = await axios.get('http://localhost:3001/api/products');
 
       // Assuming the response has a structure like { _id: ..., products: [...] }
-      const productsArray = result.data[0]?.products;
+      const productsArray = result.data;
       // console.log('rawResult', result.data[0]?.products);
       // Update the products state with the fetched data
       SetProducts(productsArray);
@@ -70,18 +78,28 @@ const MainCardArea: React.FC = () => {
 
   // console.log('products', Products);
 
-  // get unique categories to implement classification
-  const uniqueCategories = Array.from(
-    new Set(Products.map((product) => product.category?.type))
-  )
-    .map((type) => {
-      const categoryData = Products.find(
-        (product) => product.category.type === type
-      )?.category;
-      return categoryData;
-    })
-    .filter((cat): cat is Product['category'] => cat !== undefined);
+  const fetchCategories = async () => {
+    setIsLoading(true); // Start loading
+    try {
+      const result = await axios.get('http://localhost:3001/api/categories');
+      setCategories(result.data); // Assuming response contains categories array
+    } catch (error) {
+      console.error('Error fetching categories:', error);
+    } finally {
+      setIsLoading(false); // End loading
+    }
+  };
 
+  // Fetch products and categories on component mount
+  useEffect(() => {
+    fetchProducts();
+    fetchCategories();
+    console.log('Date', Date.now());
+  }, []); // Empty dependency array ensures this runs once on mount
+  // get unique categories to implement classification
+  // Filter products based on the selected category
+
+  console.log('uniqueCategories', categories);
   // console.log('unique', uniqueCategories);
   // Filter products based on selected category
   const filteredProducts =
@@ -103,12 +121,12 @@ const MainCardArea: React.FC = () => {
             Text="كل المنتجات"
           />
           {/* Loop through the unique categories */}
-          {uniqueCategories.map((cat, index) => (
+          {categories.map((cat, index) => (
             <OrderCategory
               key={index}
               CategorySelected={cat?.type || 'all'}
               ImgUrl={
-                cat?.CategoryImage ||
+                cat?.categoryImage ||
                 '/assets/itemImages/Category/AllProducts.svg'
               }
               Text={cat?.displayName || 'كل المنتجات'}

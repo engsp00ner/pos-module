@@ -3,6 +3,21 @@ import axios from 'axios';
 
 import DataTableComponent from './DataTableComponent';
 
+interface OrderItem {
+  id: string;
+  name: string;
+  price: number;
+  ItemAmount: number;
+  image: string;
+}
+
+interface Order {
+  Id: string;
+  orderDate: string;
+  totalAmount: number;
+  items: OrderItem[];
+}
+
 const AllOrderLayOut: React.FC = () => {
   const [orders, setOrders] = useState([]);
   const [totalAmount, setTotalAmount] = useState(0);
@@ -47,6 +62,7 @@ const AllOrderLayOut: React.FC = () => {
   useEffect(() => {
     fetchOrders();
   }, [startDate, endDate]); // Refetch orders when startDate or endDate changes
+
   return (
     <div>
       <DataTableComponent data={orders} />

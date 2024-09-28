@@ -8,8 +8,8 @@ import { HomePage } from './Pages/HomePage';
 import { store } from './Store';
 import MainLayout from './Components/MainLayOut';
 import AllOrderLayOut from './Components/EditOrders/AllOrderLayOut';
-import ListAllProductsPage from './Pages/ListAllProductsPage';
-import PopUpBase from './Components/popupwindow/PopUpBase';
+import ListAllProductsPage from './orders/ListAllProductsPage';
+import ListAllOrders from './Components/EditOrders/ListAllOrders';
 
 const App: React.FC = () => {
   return (
@@ -23,9 +23,9 @@ const App: React.FC = () => {
           <Route element={<MainLayout />}>
             <Route path="/" element={<HomePage />} />
             <Route path="/AdminDashBoard" element={<AdminDashBoard />} />
-            <Route path="/AllOrderLayOut" element={<AllOrderLayOut />} />
+            <Route path="/AllOrders" element={<AllOrderLayOut />} />
+            <Route path="/AllOrderLayOut" element={<ListAllOrders />} />
             <Route path="/AllProducts" element={<ListAllProductsPage />} />
-            <Route path="/popupbase" element={<PopUpBase />} />
           </Route>
         </Routes>
       </Provider>

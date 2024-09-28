@@ -3,7 +3,7 @@ const router = express.Router();
 const Order = require('../models/Order');
 
 // POST request to create a new order
-router.post('/create', async (req, res) => {
+router.post('/orders/create', async (req, res) => {
   try {
     const { Id, items, totalAmount } = req.body;
 
@@ -33,7 +33,7 @@ router.post('/create', async (req, res) => {
 });
 
 // Route to get total amount of all orders within a date range
-router.get('/total-amount', async (req, res) => {
+router.get('/orders/total-amount', async (req, res) => {
   try {
     const { startDate, endDate } = req.query;
 
@@ -62,7 +62,7 @@ router.get('/total-amount', async (req, res) => {
 });
 
 // Get all orders and total amount within a custom period of time
-router.get('/date-range', async (req, res) => {
+router.get('/orders/date-range', async (req, res) => {
   try {
     const { startDate, endDate } = req.query;
 
