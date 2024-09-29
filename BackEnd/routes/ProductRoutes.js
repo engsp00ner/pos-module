@@ -6,15 +6,27 @@ const multer = require('multer');
 const fs = require('fs-extra');
 const path = require('path');
 const Product = require('../models/Product');
-
 const router = express.Router();
 
-
-
-// Set up storage with multer to set the path to the file to be savedsave files
+  
+// Set up storage with multer to set the path to the file to be saved based on category type
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, '../public/assets/itemImages/products'); // Folder to store uploaded images
+  destination: async (req, file, cb) => {
+    try {
+      const category = JSON.parse(req.body.category);
+      const categoryType = category.type;
+
+      const folderPath = path.join(__dirname, `../../public/assets/itemImages/products/`,categoryType);
+
+      // Ensure the folder exists, create if necessary
+      await fs.ensureDir(folderPath);
+
+      cb(null, folderPath); // Save the file in the correct folder
+      console.log("folder path :",folderPath);
+    } catch (error) {
+      console.error('Error parsing category or creating directory:', error);
+      cb(error, null); // Pass the error to the callback
+    }
   },
   //renaming the file to be stored 
   filename: (req, file, cb) => {
@@ -22,20 +34,22 @@ const storage = multer.diskStorage({
     cb(null, fileName); // Save the file with a timestamp
   }
 });
-
 const upload = multer({
   storage: storage,
   limits: { fileSize: 50 * 1024 * 1024 }, // Set file size limit to 50MB
 });
 
+
 //insert new Product
 router.post('/addproduct', upload.single('ProductImage'), async (req, res) => {
+
   try {
     const { id, name, price, category, productamount } = req.body;
-
+   
     // Log the incoming request
     console.log('Incoming data:', req.body);
     console.log('File data:', req.file);
+    console.log("category type:",req.body.category.type)
 
     // Parse the category from the JSON string
     const parsedCategory = JSON.parse(category);
@@ -54,7 +68,7 @@ router.post('/addproduct', upload.single('ProductImage'), async (req, res) => {
       id,
       name,
       price,
-      image: `${req.file.filename}`, // Save only the image path
+      image: `${parsedCategory.type}/${req.file.filename}`, // Save only the image path
       category: parsedCategory,
       productamount
     });

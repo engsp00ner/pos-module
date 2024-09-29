@@ -172,7 +172,10 @@ export const OrderTable: React.FC = () => {
                 </table>
                 <div className="row justify-content-between">
                   <div className="col-auto">
-                    <AddButton onClick={HandleAddOrder} />
+                    <AddButton
+                      onClick={HandleAddOrder}
+                      title="إتـمـام الطـلب"
+                    />
                   </div>
                   <div className="col-auto">
                     <button
