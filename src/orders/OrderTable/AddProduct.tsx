@@ -11,6 +11,7 @@ import {
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import { PlusOutlined } from '@ant-design/icons';
+import Swal from 'sweetalert2';
 
 const { TextArea } = Input;
 
@@ -29,9 +30,10 @@ interface ProductData {
 
 interface Props {
   title?: string;
+  onProductAdded?: () => void; // Callback to trigger after product is added
 }
 
-const AddProduct: React.FC<Props> = ({ title }) => {
+const AddProduct: React.FC<Props> = ({ title, onProductAdded }) => {
   const [categories, setCategories] = useState<ProductData['category'][]>([]);
   const [form] = Form.useForm();
   const [fileList, setFileList] = useState<UploadFile[]>([]);
@@ -50,77 +52,6 @@ const AddProduct: React.FC<Props> = ({ title }) => {
   useEffect(() => {
     fetchCategories();
   }, []);
-
-  // // Form submit handler
-  // const handleSubmit = async (values: ProductData) => {
-  //   const ProductId = uuidv4();
-
-  //   try {
-  //     if (!values || Object.keys(values).length === 0) {
-  //       message.error('No form data received!');
-  //       return;
-  //     }
-
-  //     const selectedCategory = categories.find(
-  //       (category) => category.type.toString() === values.category.toString()
-  //     );
-
-  //     if (!selectedCategory) {
-  //       message.error('Category not found');
-  //       return;
-  //     }
-
-  //     if (fileList.length === 0) {
-  //       message.error('Please upload an image first!');
-  //       return;
-  //     }
-
-  //     const file = fileList[0]; // Assuming only one image
-
-  //     // Ensure the file has a valid originFileObj before calling getBase64
-  //     if (!file.originFileObj) {
-  //       message.error('Invalid file');
-  //       return;
-  //     }
-
-  //     // Convert the image file to base64
-  //     const base64Image = await getBase64(file.originFileObj);
-
-  //     const newProduct: ProductData = {
-  //       id: ProductId,
-  //       name: values.name,
-  //       price: values.price.toString(),
-  //       image: base64Image as string, // Send the base64 encoded image as part of the product data
-  //       category: {
-  //         type: selectedCategory.type,
-  //         displayName: selectedCategory.displayName,
-  //         categoryImage: selectedCategory.categoryImage,
-  //       },
-  //       productamount: values.productamount || '0',
-  //     };
-
-  //     const response = await axios.post(
-  //       'http://localhost:3001/api/addproduct',
-  //       newProduct,
-  //       {
-  //         headers: {
-  //           'Content-Type': 'application/json',
-  //         },
-  //       }
-  //     );
-
-  //     if (response.status === 201) {
-  //       message.success('Product added successfully!');
-  //       form.resetFields();
-  //       setFileList([]);
-  //     } else {
-  //       message.error('Failed to add product');
-  //     }
-  //   } catch (error) {
-  //     console.error('Error submitting product:', error);
-  //     message.error('Failed to add product');
-  //   }
-  // };
 
   const handleSubmit = async (values: ProductData) => {
     const ProductId = uuidv4();
@@ -173,9 +104,15 @@ const AddProduct: React.FC<Props> = ({ title }) => {
       );
 
       if (response.status === 201) {
-        message.success('Product added successfully!');
+        // Show success message (using Swal or any other method)
+        Swal.fire('Success', 'تم إضافه المنتج بنجــاح!', 'success');
         form.resetFields();
         setFileList([]);
+
+        // Trigger the callback to refresh the product list
+        if (onProductAdded) {
+          onProductAdded();
+        }
       } else {
         message.error('Failed to add product');
       }

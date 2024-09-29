@@ -6,6 +6,7 @@ import { LeftSideBar } from './LeftSideBar';
 import { RootState } from '../Store';
 import Header from './Header';
 import { toggleFullscreen } from '../features/MainSlice/fullScreenSlice';
+import MainFooter from './MainFooter';
 
 const MainLayout: React.FC = () => {
   const isActive = useSelector((state: RootState) => state.sidebar.isActive);
@@ -70,6 +71,7 @@ const MainLayout: React.FC = () => {
           {/* Outlet renders the matched child route here */}
           <Outlet />
         </section>
+        <MainFooter />
       </div>
     </div>
   );

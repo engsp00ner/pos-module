@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Drawer, Table, type TableColumnsType, type TableProps } from 'antd';
+import { Table, type TableColumnsType, type TableProps } from 'antd';
 import '../CustomStyle/AllOrdersTable.css';
 import { AlertFilled } from '@ant-design/icons';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import TrashButton from '../Components/TrashButton';
-import EditButton from '../Components/EditButton';
 import PopUpBase from '../Components/popupwindow/PopUpBase';
 import AddProduct from './OrderTable/AddProduct';
 import DrawerBase from '../Components/Drawer/DrawerBase';
@@ -121,11 +120,10 @@ const columns: TableColumnsType<DataType> = [
 
 const BaseImgUrl = '/assets/itemImages/products/';
 
-const handleEditOrder = () => {
-  console.log('Edit Clicked');
-};
-
-const handleDeleteProduct = async (id: React.Key) => {
+const handleDeleteProduct = async (
+  id: React.Key,
+  fetchProducts: () => void
+) => {
   console.log('Delete Clicked for id:', id);
   try {
     // Show confirmation alert first
@@ -152,8 +150,8 @@ const handleDeleteProduct = async (id: React.Key) => {
         icon: 'success',
       });
 
-      // Optionally update the state to remove the deleted product from the list
-      // SetProducts((prevProducts) => prevProducts.filter((product) => product.id !== id));
+      // Re-fetch products after deletion to update the table
+      fetchProducts();
 
       console.log('Product deleted successfully', id);
     } else {
@@ -230,11 +228,13 @@ const ListAllProducts: React.FC = () => {
         }}
       >
         <DrawerBase>
-          <AddProduct />
+          <AddProduct onProductAdded={fetchProducts} />
         </DrawerBase>
 
         <TrashButton
-          HandleDeleteClicked={() => handleDeleteProduct(product.id)}
+          HandleDeleteClicked={() =>
+            handleDeleteProduct(product.id, fetchProducts)
+          }
         />
       </div>
     ),

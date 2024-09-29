@@ -114,7 +114,7 @@ const ListallOrders: React.FC = () => {
   // Date settings
   const getStartDate = () => {
     const startDate = new Date();
-    startDate.setDate(startDate.getDate() - 7);
+    startDate.setDate(startDate.getDate() - 1);
     startDate.setHours(0, 0, 0, 0);
     return startDate.toISOString();
   };
@@ -172,7 +172,18 @@ const ListallOrders: React.FC = () => {
 
   return (
     <>
-      <SelectDate />
+      <SelectDate
+        onDatesChange={(dates: [string | null, string | null]) => {
+          // Update the states only if dates are not null
+          if (dates[0] && dates[1]) {
+            setStartDate(dates[0]);
+            setEndDate(dates[1]);
+          } else {
+            // Handle case when dates are null, if needed
+          }
+        }}
+      />
+
       <Table<Order>
         columns={columns}
         expandable={{

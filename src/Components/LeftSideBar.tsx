@@ -38,12 +38,11 @@ export const LeftSideBar: React.FC<SideProps> = () => {
             {/* //sidebar menu */}
             <ul className="sidebar-menu tree" data-widget="tree">
               <UserProfile />
-              <SideBarItem text="Dashboard " link="#" classname="header" />
               <SideBarItem text="الصفحة الرئيسية" link="/">
                 <ShoppingCart size={26} />
               </SideBarItem>
               {/* WEb Apps */}
-              <SideBarItem text="Web Apps " link="#" classname="header" />
+              <SideBarItem text="لوحة التحكم " link="#" classname="header" />
               <SideBarItem text="المنتجات" link="AllProducts">
                 <MessageCircle size={26} />
               </SideBarItem>
