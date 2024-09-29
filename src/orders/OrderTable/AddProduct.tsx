@@ -1,9 +1,17 @@
-/* eslint-disable no-underscore-dangle */
 import React, { useEffect, useState } from 'react';
-import { Form, Input, InputNumber, message, Select } from 'antd';
+import {
+  Form,
+  Input,
+  InputNumber,
+  message,
+  Select,
+  Upload,
+  UploadFile,
+} from 'antd';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
-// Import the UUID function
+import { PlusOutlined } from '@ant-design/icons';
+
 const { TextArea } = Input;
 
 interface ProductData {
@@ -18,20 +26,24 @@ interface ProductData {
   };
   productamount: string;
 }
+
 interface Props {
   title?: string;
 }
-const AddProduct: React.FC<Props> = ({ title }) => {
-  const [categories, setCategories] = useState<ProductData['category'][]>([]); // Categories state
-  const [form] = Form.useForm(); // Ant Design form instance
 
-  // Fetch categories
+const AddProduct: React.FC<Props> = ({ title }) => {
+  const [categories, setCategories] = useState<ProductData['category'][]>([]);
+  const [form] = Form.useForm();
+  const [fileList, setFileList] = useState<UploadFile[]>([]);
+
+  // Fetch categories from the backend
   const fetchCategories = async () => {
     try {
       const response = await axios.get('http://localhost:3001/api/categories/');
       setCategories(response.data);
     } catch (error) {
       console.error('Error fetching categories:', error);
+      message.error('Failed to load categories.');
     }
   };
 
@@ -39,68 +51,136 @@ const AddProduct: React.FC<Props> = ({ title }) => {
     fetchCategories();
   }, []);
 
-  // Generate a unique ID for the product
-  const productId = uuidv4();
-  // File upload normalization
+  // // Form submit handler
+  // const handleSubmit = async (values: ProductData) => {
+  //   const ProductId = uuidv4();
 
-  // Handle image upload change
+  //   try {
+  //     if (!values || Object.keys(values).length === 0) {
+  //       message.error('No form data received!');
+  //       return;
+  //     }
 
-  // Form submit handler
+  //     const selectedCategory = categories.find(
+  //       (category) => category.type.toString() === values.category.toString()
+  //     );
+
+  //     if (!selectedCategory) {
+  //       message.error('Category not found');
+  //       return;
+  //     }
+
+  //     if (fileList.length === 0) {
+  //       message.error('Please upload an image first!');
+  //       return;
+  //     }
+
+  //     const file = fileList[0]; // Assuming only one image
+
+  //     // Ensure the file has a valid originFileObj before calling getBase64
+  //     if (!file.originFileObj) {
+  //       message.error('Invalid file');
+  //       return;
+  //     }
+
+  //     // Convert the image file to base64
+  //     const base64Image = await getBase64(file.originFileObj);
+
+  //     const newProduct: ProductData = {
+  //       id: ProductId,
+  //       name: values.name,
+  //       price: values.price.toString(),
+  //       image: base64Image as string, // Send the base64 encoded image as part of the product data
+  //       category: {
+  //         type: selectedCategory.type,
+  //         displayName: selectedCategory.displayName,
+  //         categoryImage: selectedCategory.categoryImage,
+  //       },
+  //       productamount: values.productamount || '0',
+  //     };
+
+  //     const response = await axios.post(
+  //       'http://localhost:3001/api/addproduct',
+  //       newProduct,
+  //       {
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //         },
+  //       }
+  //     );
+
+  //     if (response.status === 201) {
+  //       message.success('Product added successfully!');
+  //       form.resetFields();
+  //       setFileList([]);
+  //     } else {
+  //       message.error('Failed to add product');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error submitting product:', error);
+  //     message.error('Failed to add product');
+  //   }
+  // };
+
   const handleSubmit = async (values: ProductData) => {
+    const ProductId = uuidv4();
+
     try {
-      if (!values || Object.keys(values).length === 0) {
-        console.error('No form data received!');
-        return;
-      }
-      // Find selected category using its 'type'
       const selectedCategory = categories.find(
-        (category) => category.type.toString() === values.category.toString() // 'values.category' is a string representing category type
+        (category) => category.type.toString() === values.category.toString()
       );
 
-      // Handle the case where no category is found
       if (!selectedCategory) {
         message.error('Category not found');
         return;
       }
-      // Log each field to ensure they are correctly bound
-      console.log('Name:', values.name);
-      console.log('Price:', values.price);
-      console.log('Quantity:', values.productamount);
 
-      // Ensure the selected category has all the required properties
-      // const { type, displayName, categoryImage } = selectedCategory;
-      const newProduct: ProductData = {
-        id: productId,
-        name: values.name,
-        price: values.price.toString(), // Convert price to string
-        image: 'notfound.png',
-        category: {
-          type: selectedCategory.type,
-          displayName: selectedCategory.displayName,
-          categoryImage: selectedCategory.categoryImage,
-        },
-        productamount: values.productamount || '0',
+      if (fileList.length === 0 || !fileList[0].originFileObj) {
+        message.error('Please upload an image first!');
+        return;
+      }
+
+      const file = fileList[0].originFileObj;
+
+      const formData = new FormData();
+      formData.append('id', ProductId);
+      formData.append('name', values.name);
+      formData.append('price', values.price);
+
+      // Constructing the category object with required fields
+      const categoryData = {
+        type: selectedCategory.type,
+        displayName: selectedCategory.displayName,
+        categoryImage: selectedCategory.categoryImage,
       };
 
-      console.log('newProduct:', newProduct); // Log the new product object for debugging
+      // Appending the category data as a JSON string
+      formData.append('category', JSON.stringify(categoryData));
+      formData.append('productamount', values.productamount || '0');
 
-      // Debug: log formData to see what is being sent
+      if (file) {
+        formData.append('ProductImage', file, file.name);
+      }
 
-      // Send form data to the backend
       const response = await axios.post(
         'http://localhost:3001/api/addproduct',
-        newProduct
+        formData,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        }
       );
 
-      // Check response status
       if (response.status === 201) {
         message.success('Product added successfully!');
-        form.resetFields(); // Reset form fields
+        form.resetFields();
+        setFileList([]);
       } else {
         message.error('Failed to add product');
       }
     } catch (error) {
-      console.error('Error uploading product:', error);
+      console.error('Error submitting product:', error);
       message.error('Failed to add product');
     }
   };
@@ -133,13 +213,13 @@ const AddProduct: React.FC<Props> = ({ title }) => {
           <Input placeholder="المنتج" style={{ width: '350px' }} />
         </Form.Item>
         <Form.Item
-          label="نوع المنتاج"
+          label="نوع المنتج"
           name="category"
           rules={[{ required: true, message: 'برجاء إختيار فئة المنتج' }]}
         >
           <Select>
-            {categories.map((category, index) => (
-              <Select.Option key={index} value={category.type}>
+            {categories.map((category) => (
+              <Select.Option key={category.type} value={category.type}>
                 <img
                   src={category.categoryImage}
                   alt="Category"
@@ -159,7 +239,7 @@ const AddProduct: React.FC<Props> = ({ title }) => {
         </Form.Item>
         <Form.Item
           label="الكمية"
-          name="productAmount"
+          name="productamount"
           rules={[{ required: true, message: 'برجاء تحديد كميه المنتج' }]}
         >
           <InputNumber placeholder="0" />
@@ -167,7 +247,18 @@ const AddProduct: React.FC<Props> = ({ title }) => {
         <Form.Item label="ملاحظات إضافيه" name="notes">
           <TextArea rows={4} />
         </Form.Item>
-
+        <Form.Item label="Upload" valuePropName="fileList">
+          <Upload
+            listType="picture-card"
+            onChange={({ fileList: newFileList }) => setFileList(newFileList)}
+            beforeUpload={() => false}
+          >
+            <button style={{ border: 0, background: 'none' }} type="button">
+              <PlusOutlined />
+              <div style={{ marginTop: 8 }}>Upload</div>
+            </button>
+          </Upload>
+        </Form.Item>
         <Form.Item wrapperCol={{ offset: 4, span: 14 }}>
           <button
             type="button"

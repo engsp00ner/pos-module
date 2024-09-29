@@ -230,7 +230,7 @@ const ListAllProducts: React.FC = () => {
         }}
       >
         <DrawerBase>
-          <AddProduct title="  تعديل المنتج" />
+          <AddProduct />
         </DrawerBase>
 
         <TrashButton
@@ -294,7 +294,7 @@ const ListAllProducts: React.FC = () => {
       ) : (
         <div>
           <PopUpBase>
-            <AddProduct title="إضافه منتج جديد" />
+            <AddProduct />
           </PopUpBase>
           <Table<DataType>
             rowSelection={rowSelection}

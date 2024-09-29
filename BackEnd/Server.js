@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const bodyParser = require('body-parser');
 const cors = require('cors'); // Import cors
 
 const OrderRoutes = require("./routes/OrderRoutes"); //orders Route
@@ -28,7 +29,8 @@ app.use(express.json());
 
 //allow users to access uploaded images through URLs.
 app.use('/assets', express.static('public/assets'));
-
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 // Routes
 //product routes
 app.use('/api', productRoutes);

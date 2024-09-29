@@ -5,6 +5,7 @@ import axios from 'axios';
 import DrawerBase from '../Drawer/DrawerBase';
 import AddProduct from '../../orders/OrderTable/AddProduct';
 import TrashButton from '../TrashButton';
+import SelectDate from '../DatePicker';
 
 interface OrderItem {
   id: string;
@@ -21,12 +22,15 @@ interface Order {
   items: OrderItem[];
 }
 
+// table columns
 const columns: TableColumnsType<Order> = [
   {
     title: 'م', // Order ID
     dataIndex: 'Id',
     key: 'Id',
-    render: (_text, _record, index) => index + 1, // Start from 1
+    render: (_text, _record, index) => (
+      <div style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>{index + 1}</div>
+    ),
     width: '50px',
   },
   {
@@ -46,16 +50,16 @@ const columns: TableColumnsType<Order> = [
       }); // 12-hour format with AM/PM
       return (
         <div
-          className="row justify-content-center "
+          className="row justify-content-center"
           style={{ fontSize: '1.5rem' }}
         >
           <div style={{ padding: '15px' }}>
-            <span>التاريخ:</span>
-            <span> {date}</span>
+            <span>الـتـاريـخ:</span>
+            <span style={{ color: '#af4343d4' }}> {date}</span>
           </div>
           <div style={{ padding: '15px' }}>
-            <span>الوقت:</span>
-            <span> {time}</span>
+            <span>الــوقــت:</span>
+            <span style={{ color: '#2fbf5be0' }}> {time}</span>
           </div>
         </div>
       );
@@ -65,14 +69,28 @@ const columns: TableColumnsType<Order> = [
     title: 'إجمالي الطلب', // Total Amount
     dataIndex: 'totalAmount',
     key: 'totalAmount',
-    width: '150px',
+    width: '250px',
+    render: (amount) => (
+      <div
+        style={{
+          textAlign: 'center',
+          fontWeight: 'bold',
+          color: '#4CAF50',
+          fontSize: '1.5rem',
+        }}
+      >
+        {new Intl.NumberFormat('ar-eg', {
+          minimumFractionDigits: 2,
+        }).format(amount)}
+      </div>
+    ),
   },
   {
     title: ' ', // Actions: Edit and Delete buttons
     dataIndex: '',
     key: 'actions',
     render: (record) => (
-      <div className="row">
+      <div className="row justify-content-center">
         <DrawerBase>
           <AddProduct title="تعديل المنتج" />
         </DrawerBase>
@@ -146,50 +164,84 @@ const ListallOrders: React.FC = () => {
     }
   };
 
+  // Handle row click to toggle expansion
+  const handleRowClick = (record: Order) => {
+    const isRowExpanded = expandedRowKeys.includes(record.Id);
+    handleExpand(!isRowExpanded, record); // Toggle expansion state
+  };
+
   return (
-    <Table<Order>
-      columns={columns}
-      expandable={{
-        expandedRowRender: (record) => (
-          <div>
-            {record.items.map((item) => (
-              <div
-                key={item.id}
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  gap: '10px',
-                  backgroundColor: '#fdfceac4',
-                  fontSize: '1.2rem',
-                }}
-              >
-                <div style={{ width: '250px' }}>
-                  <span style={{ fontWeight: 'bold' }}> المنتج:</span>
-                  <span> {item.name}</span>
+    <>
+      <SelectDate />
+      <Table<Order>
+        columns={columns}
+        expandable={{
+          expandedRowRender: (record) => (
+            <div>
+              {record.items.map((item) => (
+                <div
+                  key={item.id}
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    gap: '10px',
+                    backgroundColor: '#fdfceac4',
+                    fontSize: '1.2rem',
+                  }}
+                >
+                  <div style={{ width: '250px' }}>
+                    <span style={{ fontWeight: 'bold', fontSize: '1.7rem' }}>
+                      المنتج:
+                    </span>
+                    <span style={{ fontWeight: 'bold', fontSize: '1.3rem' }}>
+                      {item.name}
+                    </span>
+                  </div>
+                  <div>
+                    <span style={{ fontWeight: 'bold', fontSize: '1.7rem' }}>
+                      السعر:{' '}
+                    </span>
+                    <span
+                      style={{
+                        textAlign: 'center',
+                        fontWeight: 'bold',
+                        color: '#4CAF50',
+                        fontSize: '1.5rem',
+                      }}
+                    >
+                      {new Intl.NumberFormat('ar-eg', {
+                        minimumFractionDigits: 2,
+                      }).format(item.price)}
+                    </span>
+                  </div>
+                  <div>
+                    <span style={{ fontWeight: 'bold', fontSize: '1.7rem' }}>
+                      الكمية:
+                    </span>
+                    <span style={{ color: 'red', fontSize: '1.7rem' }}>
+                      {item.ItemAmount}
+                    </span>
+                  </div>
+                  {item.image && (
+                    <img src={item.image} alt={item.name} width="50" />
+                  )}
                 </div>
-                <div>
-                  <span style={{ fontWeight: 'bold' }}>السعر: </span>
-                  <span>{item.price}</span>
-                </div>
-                <div>
-                  <span style={{ fontWeight: 'bold' }}>الكمية:</span>
-                  <span>{item.ItemAmount}</span>
-                </div>
-                {item.image && (
-                  <img src={item.image} alt={item.name} width="50" />
-                )}
-              </div>
-            ))}
-          </div>
-        ),
-        rowExpandable: (record) => record.Id !== 'Not Expandable',
-        onExpand: handleExpand, // Set the onExpand callback
-      }}
-      dataSource={orders}
-      className="custom-table"
-      rowKey="Id" // Set the unique key for each row
-    />
+              ))}
+            </div>
+          ),
+          rowExpandable: (record) => record.Id !== 'Not Expandable',
+          onExpand: handleExpand, // Set the onExpand callback
+          expandedRowKeys, // Use expandedRowKeys inside expandable
+        }}
+        dataSource={orders}
+        className="custom-table"
+        rowKey="Id" // Set the unique key for each row
+        onRow={(record) => ({
+          onClick: () => handleRowClick(record), // Trigger row click to expand
+        })}
+      />
+    </>
   );
 };
 
