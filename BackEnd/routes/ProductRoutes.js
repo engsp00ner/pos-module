@@ -14,7 +14,7 @@ const router = express.Router();
 // Set up storage with multer to set the path to the file to be savedsave files
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, '../public/assets/itemImages'); // Folder to store uploaded images
+    cb(null, '../public/assets/itemImages/products'); // Folder to store uploaded images
   },
   //renaming the file to be stored 
   filename: (req, file, cb) => {
@@ -54,7 +54,7 @@ router.post('/addproduct', upload.single('ProductImage'), async (req, res) => {
       id,
       name,
       price,
-      image: `/assets/itemImages/products/${req.file.filename}`, // Save only the image path
+      image: `${req.file.filename}`, // Save only the image path
       category: parsedCategory,
       productamount
     });
