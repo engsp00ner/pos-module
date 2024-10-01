@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageCircle, ShoppingCart, Clipboard } from 'react-feather';
+import { MessageCircle, ShoppingCart, Clipboard, Users } from 'react-feather';
 import { useDispatch } from 'react-redux';
 import { UserProfile } from './SideBar/UserProfile';
 import { SideBarItem } from './SideBar/SideBarItem';
@@ -46,13 +46,14 @@ export const LeftSideBar: React.FC<SideProps> = () => {
               <SideBarItem text="المنتجات" link="AllProducts">
                 <MessageCircle size={26} />
               </SideBarItem>
+              <SideBarItem text="العملاء" link="AllCustomers">
+                <Users size={26} />
+              </SideBarItem>
               <SideBarItem text="جميع الطلبات " link="AllOrderLayOut">
                 <Clipboard />
               </SideBarItem>
             </ul>
           </section>
-
-          <div className="control-sidebar-bg" />
         </div>
       </aside>
     </>

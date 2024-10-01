@@ -22,7 +22,7 @@ export const OrderTable: React.FC = () => {
   const [isLoading, SetIsLoading] = useState(false);
   // Calculate the total order amount
   const orderTotal = orderItems.reduce((total, item) => {
-    return total + item.price * item.ItemAmount;
+    return total + item.sealprice * item.ItemAmount;
   }, 0);
 
   const startDate = new Date();
@@ -72,9 +72,9 @@ export const OrderTable: React.FC = () => {
   // this will handle adding the orders to the data base
   const HandleAddOrder = async () => {
     const itemsWithId = orderItems.map((item) => ({
-      id: `item_${Math.random().toString(36).substr(2, 9)}${Date.now()}`, // Generate string ID
+      id: item.id,
       name: item.name,
-      price: item.price,
+      sealprice: item.sealprice,
       ItemAmount: item.ItemAmount,
       image: item.image,
     }));
@@ -84,6 +84,7 @@ export const OrderTable: React.FC = () => {
       items: itemsWithId,
       totalAmount: orderTotal,
     };
+    console.log('order Data:', orderData);
     getTotalAmountForPeriod();
 
     // add total amount function
@@ -141,7 +142,7 @@ export const OrderTable: React.FC = () => {
                         itemId={item.id}
                         key={key}
                         ItemAmount={item.ItemAmount}
-                        ItemPrice={item.price}
+                        ItemPrice={item.sealprice}
                         ProductName={item.name}
                         ImgUrl={`${item.image}`}
                         onAmountChange={(newAmount) =>

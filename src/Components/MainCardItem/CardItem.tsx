@@ -1,4 +1,4 @@
-import { Link, ShoppingCart } from 'react-feather';
+import { Link } from 'react-feather';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem } from '../../features/orders/orderSlice';
 import '../../CustomStyle/DropDownMenuStyle.css';
@@ -6,14 +6,14 @@ import { RootState } from '../../Store';
 
 interface Props {
   ImgUrl?: string;
-  ItemPrice: number;
+  ItemsealPrice: number;
   ProductName: string;
   itemkey: number;
   ProductDescription?: string;
 }
 export const CardItem: React.FC<Props> = ({
   ImgUrl = '/assets/images/product/notfound.png',
-  ItemPrice,
+  ItemsealPrice,
   itemkey,
   ProductName,
   ProductDescription = '',
@@ -32,17 +32,12 @@ export const CardItem: React.FC<Props> = ({
     const product = {
       id: itemkey.toString(),
       name: ProductName,
-      price: ItemPrice,
+      sealprice: ItemsealPrice,
       image: ImgUrl,
       ItemAmount: itemAmount, // Use the updated item amount
     };
-    console.log({
-      id: itemkey, // Assuming 'itemkey' represents the product's ID
-      name: ProductName,
-      price: ItemPrice,
-      image: ImgUrl,
-      ItemAmount: itemAmount, // Use the updated item amount
-    });
+
+    console.log('product:', product);
     // Dispatch the addItem action  with the updated amount
     dispatch(addItem(product));
   };
@@ -64,7 +59,7 @@ export const CardItem: React.FC<Props> = ({
                     className="btn btn-outline image-popup-vertical-fit"
                     onClick={() => handleOnClick()}
                   >
-                    <ShoppingCart />
+                    <img src="../buy.svg" alt="not found" />
                   </Link>
                 </li>
               </ul>
@@ -73,7 +68,7 @@ export const CardItem: React.FC<Props> = ({
           <div className="fx-card-content text-right mb-0">
             <h3 className="product-text">{ProductDescription}</h3>
             <h4 className="box-title mb-0">{ProductName}</h4>
-            <h2 className="pro-price text-blue ">{ItemPrice}</h2>
+            <h2 className="pro-price text-blue ">{ItemsealPrice}</h2>
           </div>
         </div>
       </div>

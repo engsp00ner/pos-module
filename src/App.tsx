@@ -10,6 +10,8 @@ import MainLayout from './Components/MainLayOut';
 import AllOrderLayOut from './Components/EditOrders/AllOrderLayOut';
 import ListAllProductsPage from './orders/ListAllProductsPage';
 import ListAllOrders from './Components/EditOrders/ListAllOrders';
+import ListAllCustomers from './Customers/Customers';
+import LogIn from './Pages/LoginPage';
 
 const App: React.FC = () => {
   return (
@@ -17,7 +19,8 @@ const App: React.FC = () => {
       <Provider store={store}>
         <Routes>
           {/* Public route for Login (no layout) */}
-          <Route path="/Login" element={<Login />} />
+          <Route path="/Loginfirst" element={<Login />} />
+          <Route path="/Login" element={<LogIn />} />
 
           {/* Main layout route wrapping all other routes */}
           <Route element={<MainLayout />}>
@@ -25,6 +28,7 @@ const App: React.FC = () => {
             <Route path="/AdminDashBoard" element={<AdminDashBoard />} />
             <Route path="/AllOrders" element={<AllOrderLayOut />} />
             <Route path="/AllOrderLayOut" element={<ListAllOrders />} />
+            <Route path="/AllCustomers" element={<ListAllCustomers />} />
             <Route path="/AllProducts" element={<ListAllProductsPage />} />
           </Route>
         </Routes>

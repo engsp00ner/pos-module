@@ -15,7 +15,8 @@ type TableRowSelection<T extends Record<string, unknown>> =
 interface DataType extends Record<string, unknown> {
   key: React.Key;
   Productname: string;
-  Price: number;
+  sealprice: number;
+  buyprice: string;
   category: string;
   amount: React.ReactNode;
   edit: React.ReactNode;
@@ -24,7 +25,8 @@ interface DataType extends Record<string, unknown> {
 interface Product {
   id: number;
   name: string;
-  price: number;
+  sealprice: number;
+  buyprice: string;
   image: string;
   productamount: number;
   category: {
@@ -59,8 +61,8 @@ const columns: TableColumnsType<DataType> = [
     ),
   },
   {
-    title: 'السعر',
-    dataIndex: 'Price',
+    title: 'سعر الشراء',
+    dataIndex: 'buyprice',
     width: 140,
     render: (text) => (
       <span
@@ -74,7 +76,22 @@ const columns: TableColumnsType<DataType> = [
       </span>
     ),
   },
-
+  {
+    title: 'سعر البيع',
+    dataIndex: 'sealprice',
+    width: 140,
+    render: (text) => (
+      <span
+        style={{
+          fontSize: '2rem', // Adjust font size as needed
+          alignItems: 'center',
+          textAlign: 'center',
+        }}
+      >
+        {text}
+      </span>
+    ),
+  },
   {
     title: 'التصنيف',
     dataIndex: 'category',
@@ -206,7 +223,8 @@ const ListAllProducts: React.FC = () => {
     key: i,
     Productname: product.name,
     image: product.image, // Add the image URL as a separate property
-    Price: product.price,
+    sealprice: product.sealprice,
+    buyprice: product.buyprice,
     category: product.category.displayName, //  display the category's display name
     categoryimage: product.category.categoryImage, // display the category's display image
     amount: (

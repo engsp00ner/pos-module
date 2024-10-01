@@ -12,7 +12,8 @@ import Balance from './Balance';
 interface Product {
   id: number;
   name: string;
-  price: number;
+  buyprice: number;
+  sealprice: number;
   image: string;
   category: {
     type: string;
@@ -149,7 +150,7 @@ const MainCardArea: React.FC = () => {
                     key={product.id}
                     itemkey={key}
                     ImgUrl={BaseImgUrl + product.image}
-                    ItemPrice={product.price}
+                    ItemsealPrice={product.sealprice}
                     ProductName={product.name}
                     // Provide a default description if not present
                   />

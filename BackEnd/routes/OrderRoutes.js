@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const Order = require('../models/Order');
+const Order = require('../models/order');
 
 // POST request to create a new order
 router.post('/orders/create', async (req, res) => {
   try {
-    const { Id, items, totalAmount } = req.body;
+    const { Id, items, totalAmount,customer } = req.body;
 
     // Check if the request data is valid
-    if (!Id || !items || items.length === 0 || !totalAmount) {
+    if (!Id || !items || items.length === 0 || !totalAmount, customer.id) {
       return res.status(400).json({ message: 'Invalid request data' });
     }
 
@@ -16,6 +16,7 @@ router.post('/orders/create', async (req, res) => {
     const newOrder = new Order({
       Id,
       items,
+      customer,
       totalAmount,
       orderDate: Date.now(), // Automatically sets the order date
     });

@@ -44,7 +44,7 @@ const upload = multer({
 router.post('/addproduct', upload.single('ProductImage'), async (req, res) => {
 
   try {
-    const { id, name, price, category, productamount } = req.body;
+    const { id, name, sealprice,buyprice, category, productamount } = req.body;
    
     // Log the incoming request
     console.log('Incoming data:', req.body);
@@ -67,7 +67,8 @@ router.post('/addproduct', upload.single('ProductImage'), async (req, res) => {
     const product = new Product({
       id,
       name,
-      price,
+      sealprice,
+      buyprice,
       image: `${parsedCategory.type}/${req.file.filename}`, // Save only the image path
       category: parsedCategory,
       productamount
@@ -109,7 +110,7 @@ router.get('/products/:id', async (req, res) => {
 // Update a product by ID
 router.put('/products-update/:id', upload.single('image'), async (req, res) => {
   try {
-    const { name, price, category, productamount } = req.body;
+    const { name, sealprice,buyprice, category, productamount } = req.body;
 
     const product = await Product.findOne({ id: req.params.id });
 
@@ -119,7 +120,8 @@ router.put('/products-update/:id', upload.single('image'), async (req, res) => {
 
     // Update product fields
     product.name = name || product.name;
-    product.price = price || product.price;
+    product.sealprice = sealprice || product.sealprice;
+    product.buyprice = buyprice || product.buyprice;
     product.category = category || product.category;
     product.productamount = productamount || product.productamount;
 

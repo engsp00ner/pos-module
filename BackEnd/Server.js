@@ -7,6 +7,8 @@ const cors = require('cors'); // Import cors
 const OrderRoutes = require("./routes/OrderRoutes"); //orders Route
 const productRoutes = require("./routes/ProductRoutes"); //Product Routes
 const CategoryRoutes =require("./routes/CategoryRoutes"); //category route
+const CustomerRoutes = require("./routes/CustomerRoutes"); //Customer Route
+const UserRoutes=require("./routes/UserRoutes"); //user Routes
 dotenv.config();
 
 const app = express();
@@ -38,8 +40,15 @@ app.use('/api', productRoutes);
 //orders Route
 app.use('/api', OrderRoutes);
 
+//Customers Route
+app.use('/api', CustomerRoutes);
+
 //category routes
 app.use('/api', CategoryRoutes);
+
+
+//user routes
+app.use('/api', UserRoutes);
 
 // Start the server
 app.listen(PORT, () => {

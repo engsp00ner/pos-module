@@ -6,5 +6,7 @@
     color: whitesmoke;
   }
   .custom-table .ant-table-tbody > tr {
+    text-align:center;
+     align-items: center;
     cursor: pointer;
   }
