@@ -5,17 +5,19 @@ body, html {
   margin: 0;
 }
 
-.d-flex {
-  display: flex;
-  justify-content: center; /* Horizontally center */
-  align-items: center; /* Vertically center */
-  height: 100vh; /* Ensure the flex container takes full viewport height */
+
+.login-background{
   background-image: url('../../public/assets/itemImages/Login-pic.svg'); /* Replace with your image path */
   background-size: cover; /* Ensures the image covers the entire container */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents image repetition */
-}
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  height: 100vh; /* Ensure the flex container takes full viewport height */
+ 
 
+}
 .container-login {
     max-width: 550px;
     width: 100%; /* For responsiveness */

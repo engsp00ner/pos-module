@@ -19,7 +19,6 @@ const App: React.FC = () => {
       <Provider store={store}>
         <Routes>
           {/* Public route for Login (no layout) */}
-          <Route path="/Loginfirst" element={<Login />} />
           <Route path="/Login" element={<LogIn />} />
 
           {/* Main layout route wrapping all other routes */}
