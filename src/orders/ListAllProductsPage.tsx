@@ -136,6 +136,7 @@ const columns: TableColumnsType<DataType> = [
 ];
 
 const BaseImgUrl = '/assets/itemImages/products/';
+const token = localStorage.getItem('token');
 
 const handleDeleteProduct = async (
   id: React.Key,
@@ -158,7 +159,15 @@ const handleDeleteProduct = async (
     // If the user confirms the deletion
     if (result.isConfirmed) {
       // Make the delete request
-      await axios.delete(`http://localhost:3001/api/products/${id.toString()}`);
+      // Make the delete request with the token in the Authorization header
+      await axios.delete(
+        `http://localhost:3001/api/products/${id.toString()}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`, // Attach token in Authorization header
+          },
+        }
+      );
 
       // Show success alert
       Swal.fire({
@@ -198,7 +207,11 @@ const ListAllProducts: React.FC = () => {
 
     try {
       // Fetch products from the backend
-      const result = await axios.get('http://localhost:3001/api/products');
+      const result = await axios.get('http://localhost:3001/api/products', {
+        headers: {
+          Authorization: `Bearer ${token}`, // Attach token in Authorization header
+        },
+      });
 
       const productsArray = result.data;
       console.log('productsArray', productsArray);

@@ -7,8 +7,35 @@ const fs = require('fs-extra');
 const path = require('path');
 const Product = require('../models/Product');
 const router = express.Router();
-
+const jwt = require('jsonwebtoken');
   
+
+// Middleware to verify JWT token and check usertype
+const authenticateTokenAndUsertype = (allowedTypes) => (req, res, next) => {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1];
+
+  if (!token) return res.status(401).json({ message: 'Access denied. No token provided.' });
+
+  jwt.verify(token, process.env.JWTPRIVATEKEY, (err, user) => {
+    if (err) return res.status(403).json({ message: 'Invalid or expired token' });
+
+
+      // Debugging log for the user object from the token
+      console.log('User from token:', user);
+      
+    // Check if the user's usertype is one of the allowed types
+    if (!allowedTypes.includes(user.usertype)) {
+      return res.status(403).json({ message: 'Access denied. You do not have the required permissions.' });
+    }
+
+    req.user = user; // Attach the user data from the token to the request object
+    next(); // Proceed to the next middleware or route handler
+  });
+};
+
+
+
 // Set up storage with multer to set the path to the file to be saved based on category type
 const storage = multer.diskStorage({
   destination: async (req, file, cb) => {
@@ -41,7 +68,7 @@ const upload = multer({
 
 
 //insert new Product
-router.post('/addproduct', upload.single('ProductImage'), async (req, res) => {
+router.post('/addproduct', upload.single('ProductImage'),authenticateTokenAndUsertype(['admin', 'operator']), async (req, res) => {
 
   try {
     const { id, name, sealprice,buyprice, category, productamount } = req.body;
@@ -85,7 +112,7 @@ router.post('/addproduct', upload.single('ProductImage'), async (req, res) => {
 });
 
 // Get all products
-router.get('/products', async (req, res) => {
+router.get('/products',authenticateTokenAndUsertype(['admin', 'operator']), async (req, res) => {
   try {
     const products = await Product.find();
     res.status(200).json(products);
@@ -95,7 +122,7 @@ router.get('/products', async (req, res) => {
 });
 
 // Get a product by ID
-router.get('/products/:id', async (req, res) => {
+router.get('/products/:id',authenticateTokenAndUsertype(['admin', 'operator']), async (req, res) => {
   try {
     const product = await Product.findOne({ id: req.params.id });
     if (!product) {
@@ -108,7 +135,7 @@ router.get('/products/:id', async (req, res) => {
 });
 
 // Update a product by ID
-router.put('/products-update/:id', upload.single('image'), async (req, res) => {
+router.put('/products-update/:id',authenticateTokenAndUsertype(['admin']), upload.single('image'), async (req, res) => {
   try {
     const { name, sealprice,buyprice, category, productamount } = req.body;
 
@@ -140,7 +167,7 @@ router.put('/products-update/:id', upload.single('image'), async (req, res) => {
 });
 
 // Delete a product by ID
-router.delete('/products/:id', async (req, res) => {
+router.delete('/products/:id',authenticateTokenAndUsertype(['admin']), async (req, res) => {
   try {
     const product = await Product.findOneAndDelete({ id: req.params.id });
 

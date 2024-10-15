@@ -30,7 +30,7 @@ const MainCardArea: React.FC = () => {
   const [Products, SetProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [categories, setCategories] = useState<Category[]>([]);
-
+  const token = localStorage.getItem('token'); // Get token from localStorage
   // Get the selected category from Redux store
   const selectedCategory = useSelector(
     (state: RootState) =>
@@ -53,8 +53,11 @@ const MainCardArea: React.FC = () => {
 
     try {
       // Fetch products from the backend
-      const result = await axios.get('http://localhost:3001/api/products');
-
+      const result = await axios.get('http://localhost:3001/api/products', {
+        headers: {
+          Authorization: `Bearer ${token}`, // token to Authoriz the header
+        },
+      });
       // Assuming the response has a structure like { _id: ..., products: [...] }
       const productsArray = result.data;
       // console.log('rawResult', result.data[0]?.products);
@@ -151,7 +154,9 @@ const MainCardArea: React.FC = () => {
                     itemkey={key}
                     ImgUrl={BaseImgUrl + product.image}
                     ItemsealPrice={product.sealprice}
+                    Itembuyprice={product.buyprice}
                     ProductName={product.name}
+
                     // Provide a default description if not present
                   />
                 ))}

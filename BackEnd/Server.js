@@ -9,6 +9,7 @@ const productRoutes = require("./routes/ProductRoutes"); //Product Routes
 const CategoryRoutes =require("./routes/CategoryRoutes"); //category route
 const CustomerRoutes = require("./routes/CustomerRoutes"); //Customer Route
 const UserRoutes=require("./routes/UserRoutes"); //user Routes
+const AuthRoutes=require("./routes/AuthRoutes")
 dotenv.config();
 
 const app = express();
@@ -49,6 +50,9 @@ app.use('/api', CategoryRoutes);
 
 //user routes
 app.use('/api', UserRoutes);
+
+//authentication routes
+app.use('/api',AuthRoutes);
 
 // Start the server
 app.listen(PORT, () => {

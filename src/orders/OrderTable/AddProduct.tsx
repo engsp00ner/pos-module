@@ -37,7 +37,7 @@ const AddProduct: React.FC<Props> = ({ title, onProductAdded }) => {
   const [categories, setCategories] = useState<ProductData['category'][]>([]);
   const [form] = Form.useForm();
   const [fileList, setFileList] = useState<UploadFile[]>([]);
-
+  const token = localStorage.getItem('token'); // Get token from localStorage
   // Fetch categories from the backend
   const fetchCategories = async () => {
     try {
@@ -99,6 +99,7 @@ const AddProduct: React.FC<Props> = ({ title, onProductAdded }) => {
         {
           headers: {
             'Content-Type': 'multipart/form-data',
+            Authorization: `Bearer ${token}`, // Include token in the Authorization header,
           },
         }
       );

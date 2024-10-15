@@ -1,12 +1,12 @@
 import React from 'react';
 import { MessageCircle, ShoppingCart, Clipboard, Users } from 'react-feather';
 import { useDispatch } from 'react-redux';
-import { UserProfile } from './SideBar/UserProfile';
 import { SideBarItem } from './SideBar/SideBarItem';
 import {
   toggleMouseEntered,
   toggleMouseExit,
 } from '../features/SideBar/SideBarSlice';
+import { UserProfile } from './SideBar/UserProfile';
 
 interface SideProps {
   test?: string;
@@ -42,7 +42,7 @@ export const LeftSideBar: React.FC<SideProps> = () => {
                 <ShoppingCart size={26} />
               </SideBarItem>
               {/* WEb Apps */}
-              <SideBarItem text="لوحة التحكم " link="#" classname="header" />
+              <p>لوحه التحكم</p>
               <SideBarItem text="المنتجات" link="AllProducts">
                 <MessageCircle size={26} />
               </SideBarItem>

@@ -5,6 +5,7 @@ interface OrderItem {
   id: string;
   name: string;
   sealprice: number;
+  buyprice: number;
   image: string;
   ItemAmount: number;
 }
@@ -12,15 +13,12 @@ interface OrderItem {
 // Define the initial state type
 interface OrderState {
   items: OrderItem[];
-  customer: { id: string; name: string };
   currentBalance: number; // Add currentBalance to the state
 }
 
 // Initial state
 const initialState: OrderState = {
   items: [],
-  customer: { id: '0', name: 'all' },
-
   currentBalance: 0, // Initial balance is set to 0
 };
 

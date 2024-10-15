@@ -1,20 +1,30 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/user'); // Import the user model
-
+const{ User , validate }= require('../models/user'); // Import the user model
+const bcrypt = require("bcrypt");
 // Create a new user (POST /api/users)
 router.post('/user', async (req, res) => {
   try {
+    const {error}= validate(req.body);
+    if (error)
+      return res.status(400).send({message:error.details[0].message })
     const { id, name, password, displayname, usertype } = req.body;
-    const newUser = new User({ id, name, password, displayname, usertype });
+
+    //password encrypt using bycrypt
+    const salt = await bcrypt.genSalt(Number(process.env.SALT ))
+    const hashPasswod= await bcrypt.hash(password , salt);
+     
+    //creating new user
+    const newUser = new User({ id, name, password :hashPasswod, displayname, usertype });
     await newUser.save();
-    res.status(201).json({message:'New User Registed successfully' , error});
+
+    res.status(201).json({message:'تم إضافه مستخدم جديد بنجاح' });
   } catch (error) {
     // Handle duplicate key error (MongoDB's unique constraint violation)
     if (error.code === 11000 && error.keyPattern && error.keyPattern.name) {
-      res.status(400).json({ error: 'Username already exists. Please choose a different name.' });
+      res.status(400).json({ error: 'أسم المستخدم موجود بالفعل !! برجاء إختيار أسم اّخر.' });
     } else {
-      res.status(500).json({ error: 'Failed to register user' });
+      res.status(500).json({ error: 'حدث خطأ أثناء إضافه المستخدم' });
     }
   }
 });
@@ -34,30 +44,6 @@ router.get('/user', async (req, res) => {
   }
 });
 
-// Login a user (POST /api/users/login)
-router.post('/user-login', async (req, res) => {
-  const { name, password } = req.body;
-
-  try {
-    // Find the user by name (or you can switch to use email/username)
-    const user = await User.findOne({ name });
-    
-    if (!user) {
-      return res.status(404).json({ error: 'User not found' });
-    }
-
-    // Compare the provided password with the stored hashed password
-    const isMatch = await compare(password, user.password);
-    
-    if (!isMatch) {
-      return res.status(400).json({ error: 'Invalid credentials' });
-    }
-
-    res.status(200).json({ message: 'Login successful', token });
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to login' });
-  }
-});
 
 
 // Get a single user by ID (GET /api/users/:id)

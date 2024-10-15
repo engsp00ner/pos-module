@@ -7,6 +7,7 @@ import { RootState } from '../../Store';
 interface Props {
   ImgUrl?: string;
   ItemsealPrice: number;
+  Itembuyprice: number;
   ProductName: string;
   itemkey: number;
   ProductDescription?: string;
@@ -14,6 +15,7 @@ interface Props {
 export const CardItem: React.FC<Props> = ({
   ImgUrl = '/assets/images/product/notfound.png',
   ItemsealPrice,
+  Itembuyprice,
   itemkey,
   ProductName,
   ProductDescription = '',
@@ -33,6 +35,7 @@ export const CardItem: React.FC<Props> = ({
       id: itemkey.toString(),
       name: ProductName,
       sealprice: ItemsealPrice,
+      buyprice: Itembuyprice,
       image: ImgUrl,
       ItemAmount: itemAmount, // Use the updated item amount
     };
