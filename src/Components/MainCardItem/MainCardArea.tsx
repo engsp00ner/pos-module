@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import { Flex, Spin } from 'antd';
 import { OrderTable } from '../../orders/OrderTable/OrderTable';
 import { CardItem } from './CardItem';
 import OrderCategory from './OrderCategory';
@@ -10,7 +11,7 @@ import Balance from './Balance';
 
 // Define the interface for Product
 interface Product {
-  id: number;
+  id: string;
   name: string;
   buyprice: number;
   sealprice: number;
@@ -26,11 +27,18 @@ interface Category {
   displayName: string;
   categoryImage: string;
 }
+const contentStyle: React.CSSProperties = {
+  padding: 50,
+  background: 'rgba(0, 0, 0, 0.05)',
+  borderRadius: 4,
+};
 const MainCardArea: React.FC = () => {
   const [Products, SetProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [categories, setCategories] = useState<Category[]>([]);
   const token = localStorage.getItem('token'); // Get token from localStorage
+  // State to store the selected customer
+  const content = <div style={contentStyle} />;
   // Get the selected category from Redux store
   const selectedCategory = useSelector(
     (state: RootState) =>
@@ -142,16 +150,22 @@ const MainCardArea: React.FC = () => {
       <div className="row">
         <div className="row fx-element-overlay">
           {isLoading ? (
-            'loading'
+            <Flex gap="middle" vertical>
+              <Flex gap="middle">
+                <Spin tip="Loading" size="large">
+                  {content}
+                </Spin>
+              </Flex>
+            </Flex>
           ) : (
             // Products card Selection
             <div className="col-lg-6 col-md-6">
               <div className="box bg-transparent no-shadow b-0" />
               <div className="row">
-                {filteredProducts.map((product, key) => (
+                {filteredProducts.map((product, index) => (
                   <CardItem
-                    key={product.id}
-                    itemkey={key}
+                    key={index}
+                    itemkey={product.id}
                     ImgUrl={BaseImgUrl + product.image}
                     ItemsealPrice={product.sealprice}
                     Itembuyprice={product.buyprice}

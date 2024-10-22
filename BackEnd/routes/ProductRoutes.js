@@ -61,6 +61,8 @@ const storage = multer.diskStorage({
     cb(null, fileName); // Save the file with a timestamp
   }
 });
+
+//upload img file using 
 const upload = multer({
   storage: storage,
   limits: { fileSize: 50 * 1024 * 1024 }, // Set file size limit to 50MB
@@ -165,6 +167,68 @@ router.put('/products-update/:id',authenticateTokenAndUsertype(['admin']), uploa
     res.status(500).json({ error: 'Server error', details: err.message });
   }
 });
+
+//update the amount of the products according to the sold amount 
+// router.put('/products/updatesoldamount/:id', authenticateTokenAndUsertype(['admin', 'operator']), async (req, res) => {
+//   try {
+//     const id = req.params.id; // Correctly accessing the ID
+//     const { SoldAmount } = req.body;
+
+//     console.log("Received ID:", id); // Log to check what ID is received
+
+//     const product = await Product.findOne({ id: id });
+//     if (!product) {
+//       return res.status(404).json({ error: 'Product not found' });
+//     }
+
+//     console.log("Product to be amount updated:", product);
+
+//     // Convert productamount and SoldAmount to numbers to ensure correct comparison and arithmetic
+//     const currentAmount = parseInt(product.productamount, 10);
+//     const soldAmount = parseInt(SoldAmount, 10);
+
+//     if (currentAmount < soldAmount) {
+//       return res.status(400).json({ error: 'Insufficient stock available.' });
+//     }
+
+//     product.productamount = currentAmount - soldAmount;
+
+//     await product.save();
+//     res.status(200).json({ message: 'Product updated successfully', product });
+//   } catch (error) {
+//     console.error('Error updating product:', error);
+//     res.status(500).json({ error: 'Server error', details: error.message });
+//   }
+// });
+
+router.put('/products/updatesoldamount/:id', authenticateTokenAndUsertype(['admin', 'operator']), async (req, res) => {
+  try {
+    const id = req.params.id;
+    const SoldAmount = parseInt(req.body.SoldAmount, 10); // Convert to integer
+
+    if (isNaN(SoldAmount)) {
+      return res.status(400).json({ error: 'SoldAmount must be a number' });
+    }
+
+    const updatedProduct = await Product.findOneAndUpdate(
+      { id: id },
+      { $inc: { productamount: -SoldAmount } },
+      { new: true, runValidators: true }
+    );
+
+    if (!updatedProduct) {
+      return res.status(404).json({ error: 'Product not found' });
+    }
+
+    res.status(200).json({ message: 'Product updated successfully', product: updatedProduct });
+  } catch (error) {
+    console.error('Error updating product:', error);
+    res.status(500).json({ error: 'Server error', details: error.message });
+  }
+});
+
+
+
 
 // Delete a product by ID
 router.delete('/products/:id',authenticateTokenAndUsertype(['admin']), async (req, res) => {

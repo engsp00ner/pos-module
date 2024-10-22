@@ -1,8 +1,10 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { AutoComplete } from 'antd';
+import { Alert, AutoComplete, Flex, Spin } from 'antd';
+import Swal from 'sweetalert2';
 import { RootState } from '../../Store'; // Adjust the import path as needed
 import { TableRaw } from './TableRaw';
 import { AddButton } from './AddButton';
@@ -22,10 +24,22 @@ interface Customer {
   name: string;
 }
 
+interface AxiosError {
+  response: {
+    data: {
+      error: string;
+      message: string;
+    };
+    status: number;
+  };
+  message: string;
+}
+const contentStyle: React.CSSProperties = {
+  padding: 50,
+  background: 'rgba(0, 0, 0, 0.05)',
+  borderRadius: 4,
+};
 export const OrderTable: React.FC = () => {
-  const currentBalance = useSelector(
-    (state: RootState) => state.order.currentBalance
-  );
   const orderItems = useSelector((state: RootState) => state.order.items); // Get items from the Redux store
   const dispatch = useDispatch();
   const [isLoading, SetIsLoading] = useState(false);
@@ -40,12 +54,12 @@ export const OrderTable: React.FC = () => {
     id: '0',
     name: 'عميل تجزئة',
   }); // State to store the selected customer
-
+  const content = <div style={contentStyle} />;
   // Calculate the total order amount
   const orderTotal = orderItems.reduce((total, item) => {
     return total + item.sealprice * item.ItemAmount;
   }, 0);
-
+  const [refreshKey, setRefreshKey] = useState(0); // State to force rerender
   const startDate = new Date();
   const endDate = new Date();
   endDate.setDate(startDate.getDate() + 1);
@@ -56,9 +70,9 @@ export const OrderTable: React.FC = () => {
   const getTotalAmountForPeriod = async () => {
     try {
       const response = await axios.get(
-        'http://localhost:3001/api/orders/total-amount',
+        'http://localhost:3001/api/orders/date-range',
         {
-          params: { startDate, endDate },
+          params: { startDate, endDate, paymentType },
           headers: {
             Authorization: `Bearer ${token}`, // Include the token in Authorization header
           },
@@ -83,7 +97,7 @@ export const OrderTable: React.FC = () => {
       // Save the original customer data
       setCustomersData(result.data);
 
-      // Now map the customer data to the format AutoComplete expects
+      // map the customer data to the format AutoComplete expects
       const customerOptions = result.data.map((custom: Customer) => ({
         value: custom.name, // Map `name` to the `value` property
       }));
@@ -95,13 +109,33 @@ export const OrderTable: React.FC = () => {
     }
   };
 
-  useEffect(() => {
-    getTotalAmountForPeriod();
-    getAllCustomers();
-  }, []); // Only run once when the component mounts
-
   const handleAmountChange = (id: string, newAmount: number) => {
     dispatch(updateItemAmount({ id, newAmount }));
+  };
+
+  const handleUpdateProductAmount = async (id: string, soldAmount: number) => {
+    try {
+      //  SoldAmount is deducted from the current product amount
+      const response = await axios.put(
+        `http://localhost:3001/api/products/updatesoldamount/${id}`,
+        {
+          SoldAmount: soldAmount,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`, // Assuming token is stored in localStorage
+          },
+        }
+      );
+      console.log('Product updated successfully:', response.data);
+    } catch (error: unknown) {
+      const e = error as AxiosError;
+      if (e.response && e.response.data) {
+        console.error('Error updating product:', e.response.data.message);
+      } else {
+        console.error('Error updating product:', e.message);
+      }
+    }
   };
 
   const generateRandomId = () => {
@@ -122,10 +156,10 @@ export const OrderTable: React.FC = () => {
       Id: generateRandomId(),
       items: itemsWithId,
       totalAmount: orderTotal,
-      paymentType, // Add payment type to the order
-      paymentStatus, // Add payment status to the order
-      customer, // customer
-      paymentDate: paymentStatus === 'paid' ? new Date() : null, // Set payment date if the status is 'paid'
+      paymentType,
+      paymentStatus,
+      customer,
+      paymentDate: paymentStatus === 'paid' ? new Date() : null,
     };
 
     try {
@@ -135,15 +169,38 @@ export const OrderTable: React.FC = () => {
         orderData,
         {
           headers: {
-            Authorization: `Bearer ${token}`, // Include token in Authorization header
+            Authorization: `Bearer ${token}`,
           },
         }
       );
-      SetIsLoading(false);
-      dispatch(resetOrder(this)); // Reset order without passing `this`
-      console.log('Order saved successfully:', response.data);
+
+      if (response.status === 201) {
+        // Use Promise.all to handle all updates concurrently
+        await Promise.all(
+          orderItems.map((item) => {
+            console.log('Product ID to be updated:', item.id);
+            return handleUpdateProductAmount(item.id, item.ItemAmount);
+          })
+        );
+
+        dispatch(resetOrder(this)); // Reset order in Redux store
+        Swal.fire({
+          icon: 'success',
+          title: 'تم إضافة الطلب بنجاح',
+          showConfirmButton: false,
+          timer: 1500,
+        });
+
+        handleReset(); // Reset local state
+        setRefreshKey((oldKey) => oldKey + 1); // Trigger a re-render
+      }
     } catch (error) {
       console.error('Error saving order:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'خطأ',
+        text: 'لم يتم إضافة الطلب بنجاح',
+      });
     } finally {
       SetIsLoading(false);
     }
@@ -151,12 +208,15 @@ export const OrderTable: React.FC = () => {
 
   const HandleDeleteOrder = () => {
     dispatch(resetOrder(this)); // No need for `this` here
+    handleReset();
   };
 
   // Toggle between Cash and Credit
   const handleToggle = () => {
-    setPaymentType(paymentType === 'Cash' ? 'Credit' : 'Cash');
+    setPaymentType((prevType) => (prevType === 'Cash' ? 'Credit' : 'Cash'));
+    setPaymentStatus((prevType) => (prevType === 'paid' ? 'pending' : 'paid'));
   };
+
   // Function to handle selecting a customer from the AutoComplete options
   const handleCustomerSelect = (value: string) => {
     // Find the selected customer from the original customer data
@@ -166,10 +226,32 @@ export const OrderTable: React.FC = () => {
       console.log('Selected Customer:', selectedCustomer); // For debugging
     }
   };
+
+  // function to reset all values after i save
+  const handleReset = () => {
+    setCustomer({ id: '0', name: 'عميل تجزئة' });
+    setPaymentType('Cash');
+    setPaymentStatus('paid');
+    SetIsLoading(false);
+    setCustomersData([]);
+  };
+
+  useEffect(() => {
+    getTotalAmountForPeriod();
+    getAllCustomers();
+    getTotalAmountForPeriod();
+  }, [refreshKey]); // Only run once when the component mounts
+
   return (
     <>
       {isLoading ? (
-        <h3>Loading...</h3>
+        <Flex gap="middle" vertical>
+          <Flex gap="middle">
+            <Spin tip="Loading" size="large">
+              {content}
+            </Spin>
+          </Flex>
+        </Flex>
       ) : (
         <div className="col-12 col-lg-12 col-xl-12 hold-transition light-skin sidebar-mini theme-primary">
           {/* Flipping card for payment type */}

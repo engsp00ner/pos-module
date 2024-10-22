@@ -9,7 +9,8 @@ interface Props {
   ItemsealPrice: number;
   Itembuyprice: number;
   ProductName: string;
-  itemkey: number;
+  key: number;
+  itemkey: string;
   ProductDescription?: string;
 }
 export const CardItem: React.FC<Props> = ({
@@ -17,6 +18,7 @@ export const CardItem: React.FC<Props> = ({
   ItemsealPrice,
   Itembuyprice,
   itemkey,
+  key,
   ProductName,
   ProductDescription = '',
 }) => {
@@ -32,7 +34,7 @@ export const CardItem: React.FC<Props> = ({
     // If the item exists, increment its amount, otherwise set amount to 1
     const itemAmount = existingItem ? existingItem.ItemAmount + 1 : 1;
     const product = {
-      id: itemkey.toString(),
+      id: itemkey,
       name: ProductName,
       sealprice: ItemsealPrice,
       buyprice: Itembuyprice,
@@ -45,7 +47,7 @@ export const CardItem: React.FC<Props> = ({
     dispatch(addItem(product));
   };
   return (
-    <div className="col-3 col-lg-3 col-xl-3" key={itemkey}>
+    <div className="col-3 col-lg-3 col-xl-3" key={key}>
       <div className="box box-default ">
         <div className="fx-card-item">
           <div className="fx-card-avatar fx-overlay-1">

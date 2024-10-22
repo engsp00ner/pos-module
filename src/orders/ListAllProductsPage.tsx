@@ -60,6 +60,7 @@ const columns: TableColumnsType<DataType> = [
       </>
     ),
   },
+
   {
     title: 'سعر الشراء',
     dataIndex: 'buyprice',

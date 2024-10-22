@@ -70,9 +70,9 @@ router.post('/orders/create',authenticateTokenAndUsertype(['admin', 'operator'])
 
 // GET orders and total amount within a custom period of time with optional filtering by paymentType and paymentStatus
 //this api is only allowed to be accessed by the admin users .
-router.get('/orders/date-range', authenticateTokenAndUsertype(['admin']), async (req, res) => {
+router.get('/orders/date-range', authenticateTokenAndUsertype(['admin', 'operator']), async (req, res) => {
   try {
-    const { startDate, endDate, paymentType, paymentStatus } = req.query;
+    const { startDate, endDate, paymentType, paymentStatus , customerId } = req.query;
 
     // Ensure the dates are provided
     if (!startDate || !endDate) {
@@ -88,10 +88,14 @@ router.get('/orders/date-range', authenticateTokenAndUsertype(['admin']), async 
       orderDate: { $gte: start, $lte: end },
     };
 
-    // If paymentType is provided, add it to the query
+    // If customerId is provided, add it to the query
+    if (customerId) {
+      query.customerId = custome.id; // Assuming orders have a `customer` field storing customer ID
+    }
+    // If paymentType is provided, add it to the query else get all data
     if (paymentType) {
       query.paymentType = paymentType;
-    }
+    }      
 
     // If paymentStatus is provided, add it to the query
     if (paymentStatus) {
@@ -110,7 +114,6 @@ router.get('/orders/date-range', authenticateTokenAndUsertype(['admin']), async 
     res.status(500).json({ message: 'Failed to fetch orders', error });
   }
 });
-
 
 // PUT request to update an existing order
 router.put('/orders/update/:id', authenticateTokenAndUsertype(['admin']), async (req, res) => {
