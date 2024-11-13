@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "66f43ec0c06b67150693b003"
+  },
+  "type": "snacks",
+  "displayName": "شبسي و بسكوت",
+  "categoryImage": "/assets/itemImages/Category/snacks.svg"
+},
+{
+  "_id": {
+    "$oid": "66f43f5bc06b67150693b005"
+  },
+  "type": "foods",
+  "displayName": " مأكولات ",
+  "categoryImage": "/assets/itemImages/Category/FoodColoured.svg"
+},
+{
+  "_id": {
+    "$oid": "66f43f96c06b67150693b006"
+  },
+  "type": "drinks",
+  "displayName": " مشروبات ",
+  "categoryImage": "/assets/itemImages/Category/drinksColoured.svg"
+}]

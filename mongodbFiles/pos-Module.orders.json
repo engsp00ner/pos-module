@@ -1,0 +1,3026 @@
+[{
+  "_id": {
+    "$oid": "670eccf379a5939d229289f8"
+  },
+  "Id": "order_bj3643hmy1729023219016",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 3,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "670eccf379a5939d229289f9"
+      },
+      "margin": 1
+    },
+    {
+      "id": "2",
+      "name": "بسكوت ماكفيتس",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/MacVites.png",
+      "_id": {
+        "$oid": "670eccf379a5939d229289fa"
+      },
+      "margin": 1
+    },
+    {
+      "id": "6",
+      "name": "سندوتش طعميه",
+      "sealprice": 7,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/foods/sandwich3.jpg",
+      "_id": {
+        "$oid": "670eccf379a5939d229289fb"
+      },
+      "margin": 3
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "670eccf379a5939d229289fc"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "670eccf379a5939d229289fd"
+    }
+  },
+  "totalAmount": 39,
+  "orderDate": {
+    "$date": "2024-10-15T20:13:39.026Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-15T20:13:39.016Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670ece1b79a5939d229289ff"
+  },
+  "Id": "order_gf2cyhefz1729023515711",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 3,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "670ece1b79a5939d22928a00"
+      },
+      "margin": 1
+    },
+    {
+      "id": "2",
+      "name": "بسكوت ماكفيتس",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 3,
+      "image": "/assets/itemImages/products/snacks/MacVites.png",
+      "_id": {
+        "$oid": "670ece1b79a5939d22928a01"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "5",
+    "name": "قيادة قوات حرس الحدود",
+    "_id": {
+      "$oid": "66fad3929612308a027b6dea"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "670ece1b79a5939d22928a03"
+    }
+  },
+  "totalAmount": 30,
+  "orderDate": {
+    "$date": "2024-10-15T20:18:35.722Z"
+  },
+  "paymentType": "Credit",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-15T20:18:35.711Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670ece3279a5939d22928a05"
+  },
+  "Id": "order_qaqt096vn1729023538294",
+  "items": [
+    {
+      "id": "2",
+      "name": "بسكوت ماكفيتس",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/MacVites.png",
+      "_id": {
+        "$oid": "670ece3279a5939d22928a06"
+      },
+      "margin": 1
+    },
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "670ece3279a5939d22928a07"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "5",
+    "name": "قيادة قوات حرس الحدود",
+    "_id": {
+      "$oid": "66fad3929612308a027b6dea"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "670ece3279a5939d22928a09"
+    }
+  },
+  "totalAmount": 20,
+  "orderDate": {
+    "$date": "2024-10-15T20:18:58.301Z"
+  },
+  "paymentType": "Credit",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-15T20:18:58.294Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670ed14179a5939d22928a14"
+  },
+  "Id": "order_h4eurpyso1729024321248",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "670ed14179a5939d22928a15"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "5",
+    "name": "قيادة قوات حرس الحدود",
+    "_id": {
+      "$oid": "66fad3929612308a027b6dea"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "670ed14179a5939d22928a17"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-15T20:32:01.257Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-15T20:32:01.248Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670ed1a279a5939d22928a2c"
+  },
+  "Id": "order_9zpqwrywf1729024418009",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "670ed1a279a5939d22928a2d"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "5",
+    "name": "قيادة قوات حرس الحدود",
+    "_id": {
+      "$oid": "66fad3929612308a027b6dea"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "670ed1a279a5939d22928a2f"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-15T20:33:38.018Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-15T20:33:38.009Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670ed37879a5939d22928ac3"
+  },
+  "Id": "order_xjlb3iwhn1729024888647",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "670ed37879a5939d22928ac4"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "670ed37879a5939d22928ac5"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "670ed37879a5939d22928ac6"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-15T20:41:28.654Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-15T20:41:28.647Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670ed37d79a5939d22928adf"
+  },
+  "Id": "order_oqvxdtk611729024893655",
+  "items": [
+    {
+      "id": "2",
+      "name": "بسكوت ماكفيتس",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/MacVites.png",
+      "_id": {
+        "$oid": "670ed37d79a5939d22928ae0"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "670ed37d79a5939d22928ae1"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "670ed37d79a5939d22928ae2"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-15T20:41:33.667Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-15T20:41:33.655Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670edeae79a5939d22928b80"
+  },
+  "Id": "order_6g4bpk4cc1729027758723",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "670edeae79a5939d22928b81"
+      },
+      "margin": 1
+    },
+    {
+      "id": "2",
+      "name": "بسكوت ماكفيتس",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 1,
+      "image": "/assets/itemImages/products/snacks/MacVites.png",
+      "_id": {
+        "$oid": "670edeae79a5939d22928b82"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "670edeae79a5939d22928b83"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "670edeae79a5939d22928b84"
+    }
+  },
+  "totalAmount": 15,
+  "orderDate": {
+    "$date": "2024-10-15T21:29:18.732Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-15T21:29:18.723Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670f75d079a5939d22928bd3"
+  },
+  "Id": "order_sqn1q64jl1729066448092",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "670f75d079a5939d22928bd4"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "670f75d079a5939d22928bd5"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "670f75d079a5939d22928bd6"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-16T08:14:08.099Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-16T08:14:08.092Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670f767679a5939d22928be1"
+  },
+  "Id": "order_p9ov486501729066614955",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 1,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "670f767679a5939d22928be2"
+      },
+      "margin": 1
+    },
+    {
+      "id": "2",
+      "name": "بسكوت ماكفيتس",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 1,
+      "image": "/assets/itemImages/products/snacks/MacVites.png",
+      "_id": {
+        "$oid": "670f767679a5939d22928be3"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "670f767679a5939d22928be4"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "670f767679a5939d22928be5"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-16T08:16:54.965Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-16T08:16:54.955Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670f774a79a5939d22928bf4"
+  },
+  "Id": "order_fo64oczuo1729066826334",
+  "items": [
+    {
+      "id": "6",
+      "name": "سندوتش طعميه",
+      "sealprice": 7,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/foods/sandwich3.jpg",
+      "_id": {
+        "$oid": "670f774a79a5939d22928bf5"
+      },
+      "margin": 3
+    },
+    {
+      "id": "7",
+      "name": "سندوتش كبدة",
+      "sealprice": 10,
+      "buyprice": 7,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/foods/sandwich.jpg",
+      "_id": {
+        "$oid": "670f774a79a5939d22928bf6"
+      },
+      "margin": 3
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "670f774a79a5939d22928bf7"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "670f774a79a5939d22928bf8"
+    }
+  },
+  "totalAmount": 34,
+  "orderDate": {
+    "$date": "2024-10-16T08:20:26.342Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-16T08:20:26.334Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670f79a479a5939d22928c33"
+  },
+  "Id": "order_u5wb6okus1729067428155",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "670f79a479a5939d22928c34"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "670f79a479a5939d22928c35"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "670f79a479a5939d22928c36"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-16T08:30:28.164Z"
+  },
+  "paymentType": "Credit",
+  "paymentStatus": "pending",
+  "paymentDate": null,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670fae3379a5939d22928c72"
+  },
+  "Id": "order_gnz5v5o171729080883785",
+  "items": [
+    {
+      "id": "2",
+      "name": "بسكوت ماكفيتس",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/MacVites.png",
+      "_id": {
+        "$oid": "670fae3379a5939d22928c73"
+      },
+      "margin": 1
+    },
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 4,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "670fae3379a5939d22928c74"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "670fae3379a5939d22928c75"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "670fae3379a5939d22928c76"
+    }
+  },
+  "totalAmount": 30,
+  "orderDate": {
+    "$date": "2024-10-16T12:14:43.795Z"
+  },
+  "paymentType": "Credit",
+  "paymentStatus": "pending",
+  "paymentDate": null,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670fae3a79a5939d22928c78"
+  },
+  "Id": "order_x8etymgvb1729080890441",
+  "items": [
+    {
+      "id": "2",
+      "name": "بسكوت ماكفيتس",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/MacVites.png",
+      "_id": {
+        "$oid": "670fae3a79a5939d22928c79"
+      },
+      "margin": 1
+    },
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 4,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "670fae3a79a5939d22928c7a"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "3",
+    "name": "شعبة التنظيم و الإدارة",
+    "_id": {
+      "$oid": "66fad33a9612308a027b6de8"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "670fae3a79a5939d22928c7c"
+    }
+  },
+  "totalAmount": 30,
+  "orderDate": {
+    "$date": "2024-10-16T12:14:50.447Z"
+  },
+  "paymentType": "Credit",
+  "paymentStatus": "pending",
+  "paymentDate": null,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670fae4379a5939d22928c99"
+  },
+  "Id": "order_34scz3id61729080899657",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "670fae4379a5939d22928c9a"
+      },
+      "margin": 1
+    },
+    {
+      "id": "2",
+      "name": "بسكوت ماكفيتس",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/MacVites.png",
+      "_id": {
+        "$oid": "670fae4379a5939d22928c9b"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "670fae4379a5939d22928c9c"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "670fae4379a5939d22928c9d"
+    }
+  },
+  "totalAmount": 20,
+  "orderDate": {
+    "$date": "2024-10-16T12:14:59.666Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-16T12:14:59.657Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670fbd74487e66eea5f02727"
+  },
+  "Id": "order_2d48j9dgx1729084788004",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "670fbd74487e66eea5f02728"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "1",
+    "name": "فرع نظم المعلومات ",
+    "_id": {
+      "$oid": "66fad2f99612308a027b6de6"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "670fbd74487e66eea5f0272a"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-16T13:19:48.013Z"
+  },
+  "paymentType": "Credit",
+  "paymentStatus": "pending",
+  "paymentDate": null,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670fbd7f487e66eea5f0274d"
+  },
+  "Id": "order_y408awrfu1729084799163",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "670fbd7f487e66eea5f0274e"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "6",
+    "name": "الشعبة الهندسية",
+    "_id": {
+      "$oid": "66fad3bf9612308a027b6dec"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "670fbd7f487e66eea5f02750"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-16T13:19:59.174Z"
+  },
+  "paymentType": "Credit",
+  "paymentStatus": "pending",
+  "paymentDate": null,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6710e4fe487e66eea5f027e3"
+  },
+  "Id": "order_gnqtbuxxd1729160446269",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "6710e4fe487e66eea5f027e4"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "6710e4fe487e66eea5f027e5"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "6710e4fe487e66eea5f027e6"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-17T10:20:46.278Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T10:20:46.269Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6710e90a487e66eea5f02802"
+  },
+  "Id": "order_315f2n3ru1729161482069",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "6710e90a487e66eea5f02803"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "6710e90a487e66eea5f02804"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "6710e90a487e66eea5f02805"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-17T10:38:02.076Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T10:38:02.069Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6710eaf6487e66eea5f02826"
+  },
+  "Id": "order_8ri0pctwq1729161974510",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "6710eaf6487e66eea5f02827"
+      },
+      "margin": 1
+    },
+    {
+      "id": "2",
+      "name": "بسكوت ماكفيتس",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/MacVites.png",
+      "_id": {
+        "$oid": "6710eaf6487e66eea5f02828"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "6710eaf6487e66eea5f02829"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "6710eaf6487e66eea5f0282a"
+    }
+  },
+  "totalAmount": 20,
+  "orderDate": {
+    "$date": "2024-10-17T10:46:14.519Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T10:46:14.510Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6710eee301069c8a32cfdb56"
+  },
+  "Id": "order_n32w444z81729162979397",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 3,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "6710eee301069c8a32cfdb57"
+      },
+      "margin": 1
+    },
+    {
+      "id": "2",
+      "name": "بسكوت ماكفيتس",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/MacVites.png",
+      "_id": {
+        "$oid": "6710eee301069c8a32cfdb58"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "2",
+    "name": "شعبة العمليات",
+    "_id": {
+      "$oid": "66fad3279612308a027b6de7"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "6710eee301069c8a32cfdb5a"
+    }
+  },
+  "totalAmount": 25,
+  "orderDate": {
+    "$date": "2024-10-17T11:02:59.405Z"
+  },
+  "paymentType": "Credit",
+  "paymentStatus": "pending",
+  "paymentDate": null,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6710eeeb01069c8a32cfdb67"
+  },
+  "Id": "order_9zvnv6mbr1729162987582",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 3,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "6710eeeb01069c8a32cfdb68"
+      },
+      "margin": 1
+    },
+    {
+      "id": "2",
+      "name": "بسكوت ماكفيتس",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/MacVites.png",
+      "_id": {
+        "$oid": "6710eeeb01069c8a32cfdb69"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "6710eeeb01069c8a32cfdb6a"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "6710eeeb01069c8a32cfdb6b"
+    }
+  },
+  "totalAmount": 25,
+  "orderDate": {
+    "$date": "2024-10-17T11:03:07.592Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T11:03:07.582Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67110b808f7a16f95d36920d"
+  },
+  "Id": "order_u39fc9yj91729170304922",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "67110b808f7a16f95d36920e"
+      },
+      "margin": 1
+    },
+    {
+      "id": "6",
+      "name": "سندوتش طعميه",
+      "sealprice": 7,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/foods/sandwich3.jpg",
+      "_id": {
+        "$oid": "67110b808f7a16f95d36920f"
+      },
+      "margin": 3
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "67110b808f7a16f95d369210"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "67110b808f7a16f95d369211"
+    }
+  },
+  "totalAmount": 24,
+  "orderDate": {
+    "$date": "2024-10-17T13:05:04.932Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T13:05:04.922Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67110eaf8f7a16f95d369264"
+  },
+  "Id": "order_fxrnajfid1729171119698",
+  "items": [
+    {
+      "id": "1",
+      "name": "بسكوت بسكريم",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/biscrem.jpg",
+      "_id": {
+        "$oid": "67110eaf8f7a16f95d369265"
+      },
+      "margin": 1
+    },
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 6,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "67110eaf8f7a16f95d369266"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "67110eaf8f7a16f95d369267"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "67110eaf8f7a16f95d369268"
+    }
+  },
+  "totalAmount": 40,
+  "orderDate": {
+    "$date": "2024-10-17T13:18:39.708Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T13:18:39.698Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67110f518f7a16f95d3692e6"
+  },
+  "Id": "order_sg6c0xp3a1729171281723",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 7,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "67110f518f7a16f95d3692e7"
+      },
+      "margin": 1
+    },
+    {
+      "id": "6",
+      "name": "سندوتش طعميه",
+      "sealprice": 7,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/foods/sandwich3.jpg",
+      "_id": {
+        "$oid": "67110f518f7a16f95d3692e8"
+      },
+      "margin": 3
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "67110f518f7a16f95d3692e9"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "67110f518f7a16f95d3692ea"
+    }
+  },
+  "totalAmount": 49,
+  "orderDate": {
+    "$date": "2024-10-17T13:21:21.733Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T13:21:21.723Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67112a5df6bf2f03ec0951aa"
+  },
+  "Id": "order_gbm0btiji1729178205340",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 10,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "67112a5df6bf2f03ec0951ab"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "67112a5df6bf2f03ec0951ac"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "67112a5df6bf2f03ec0951ad"
+    }
+  },
+  "totalAmount": 50,
+  "orderDate": {
+    "$date": "2024-10-17T15:16:45.350Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T15:16:45.340Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67112b10f6bf2f03ec09521b"
+  },
+  "Id": "order_jtbi8x7mi1729178384702",
+  "items": [
+    {
+      "id": "2",
+      "name": "بسكوت ماكفيتس",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 3,
+      "image": "/assets/itemImages/products/snacks/MacVites.png",
+      "_id": {
+        "$oid": "67112b10f6bf2f03ec09521c"
+      },
+      "margin": 1
+    },
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 20,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "67112b10f6bf2f03ec09521d"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "67112b10f6bf2f03ec09521e"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "67112b10f6bf2f03ec09521f"
+    }
+  },
+  "totalAmount": 115,
+  "orderDate": {
+    "$date": "2024-10-17T15:19:44.710Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T15:19:44.702Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67112cb3257e098504a8783c"
+  },
+  "Id": "order_gsse2jp461729178803210",
+  "items": [
+    {
+      "id": "7",
+      "name": "سندوتش كبدة",
+      "sealprice": 10,
+      "buyprice": 7,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/foods/sandwich.jpg",
+      "_id": {
+        "$oid": "67112cb3257e098504a8783d"
+      },
+      "margin": 3
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "67112cb3257e098504a8783e"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "67112cb3257e098504a8783f"
+    }
+  },
+  "totalAmount": 20,
+  "orderDate": {
+    "$date": "2024-10-17T15:26:43.241Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T15:26:43.210Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67113094257e098504a87902"
+  },
+  "Id": "order_7qren8gis1729179796417",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 1,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "67113094257e098504a87903"
+      },
+      "margin": 1
+    },
+    {
+      "id": "2",
+      "name": "بسكوت ماكفيتس",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 1,
+      "image": "/assets/itemImages/products/snacks/MacVites.png",
+      "_id": {
+        "$oid": "67113094257e098504a87904"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "67113094257e098504a87905"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "67113094257e098504a87906"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-17T15:43:16.428Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T15:43:16.417Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "671132075f5786082246120a"
+  },
+  "Id": "order_eqybj4v3i1729180167200",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "671132075f5786082246120b"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "671132075f5786082246120c"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "671132075f5786082246120d"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-17T15:49:27.208Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T15:49:27.200Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "671132d1f483e806c2a68002"
+  },
+  "Id": "order_mbhvxlx6n1729180369841",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "671132d1f483e806c2a68003"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "671132d1f483e806c2a68004"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "671132d1f483e806c2a68005"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-17T15:52:49.851Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T15:52:49.841Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "671133511059fa858aad9680"
+  },
+  "Id": "order_tag7bawqv1729180497329",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 3,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "671133511059fa858aad9681"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "671133511059fa858aad9682"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "671133511059fa858aad9683"
+    }
+  },
+  "totalAmount": 15,
+  "orderDate": {
+    "$date": "2024-10-17T15:54:57.338Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T15:54:57.329Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "671133d70493edb0afb1d802"
+  },
+  "Id": "order_x9i5mws3i1729180631697",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "671133d70493edb0afb1d803"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "671133d70493edb0afb1d804"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "671133d70493edb0afb1d805"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-17T15:57:11.707Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T15:57:11.697Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67113401ecebc690c8448061"
+  },
+  "Id": "order_8zpawuzj11729180673247",
+  "items": [
+    {
+      "id": "7",
+      "name": "سندوتش كبدة",
+      "sealprice": 10,
+      "buyprice": 7,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/foods/sandwich.jpg",
+      "_id": {
+        "$oid": "67113401ecebc690c8448062"
+      },
+      "margin": 3
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "67113401ecebc690c8448063"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "67113401ecebc690c8448064"
+    }
+  },
+  "totalAmount": 20,
+  "orderDate": {
+    "$date": "2024-10-17T15:57:53.273Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T15:57:53.247Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "671134b57dc147c6964aec72"
+  },
+  "Id": "order_7lo205qjc1729180853017",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "671134b57dc147c6964aec73"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "671134b57dc147c6964aec74"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "671134b57dc147c6964aec75"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-17T16:00:53.028Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T16:00:53.017Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "671140be41ee48636229dfcc"
+  },
+  "Id": "order_zli9yexzk1729183934214",
+  "items": [
+    {
+      "id": "7",
+      "name": "سندوتش كبدة",
+      "sealprice": 10,
+      "buyprice": 7,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/foods/sandwich.jpg",
+      "_id": {
+        "$oid": "671140be41ee48636229dfcd"
+      },
+      "margin": 3
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "671140be41ee48636229dfce"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "671140be41ee48636229dfcf"
+    }
+  },
+  "totalAmount": 20,
+  "orderDate": {
+    "$date": "2024-10-17T16:52:14.224Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T16:52:14.214Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "671161895dd879fc7b30d41d"
+  },
+  "Id": "order_sxhbrk5jw1729192329380",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "671161895dd879fc7b30d41e"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "671161895dd879fc7b30d41f"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "671161895dd879fc7b30d420"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-17T19:12:09.392Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T19:12:09.380Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "671162b2d2d49161bf8c54dd"
+  },
+  "Id": "order_uh1bxj1sw1729192626939",
+  "items": [
+    {
+      "id": "7",
+      "name": "سندوتش كبدة",
+      "sealprice": 10,
+      "buyprice": 7,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/foods/sandwich.jpg",
+      "_id": {
+        "$oid": "671162b2d2d49161bf8c54de"
+      },
+      "margin": 3
+    },
+    {
+      "id": "6",
+      "name": "سندوتش طعميه",
+      "sealprice": 7,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/foods/sandwich3.jpg",
+      "_id": {
+        "$oid": "671162b2d2d49161bf8c54df"
+      },
+      "margin": 3
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "671162b2d2d49161bf8c54e0"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "671162b2d2d49161bf8c54e1"
+    }
+  },
+  "totalAmount": 34,
+  "orderDate": {
+    "$date": "2024-10-17T19:17:06.971Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T19:17:06.939Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6711649468c8e292a198de36"
+  },
+  "Id": "order_00zs7u1vc1729193108554",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "6711649468c8e292a198de37"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "6711649468c8e292a198de38"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "6711649468c8e292a198de39"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-17T19:25:08.561Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T19:25:08.554Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6711681968c8e292a198df07"
+  },
+  "Id": "order_bzwfwaa3d1729194009594",
+  "items": [
+    {
+      "id": "7",
+      "name": "سندوتش كبدة",
+      "sealprice": 10,
+      "buyprice": 7,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/foods/sandwich.jpg",
+      "_id": {
+        "$oid": "6711681968c8e292a198df08"
+      },
+      "margin": 3
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "6711681968c8e292a198df09"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "6711681968c8e292a198df0a"
+    }
+  },
+  "totalAmount": 20,
+  "orderDate": {
+    "$date": "2024-10-17T19:40:09.602Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T19:40:09.594Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6711682968c8e292a198df4c"
+  },
+  "Id": "order_1u4r2a9fk1729194025362",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 10,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "6711682968c8e292a198df4d"
+      },
+      "margin": 1
+    },
+    {
+      "id": "2",
+      "name": "بسكوت ماكفيتس",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/MacVites.png",
+      "_id": {
+        "$oid": "6711682968c8e292a198df4e"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "6711682968c8e292a198df4f"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "6711682968c8e292a198df50"
+    }
+  },
+  "totalAmount": 60,
+  "orderDate": {
+    "$date": "2024-10-17T19:40:25.372Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T19:40:25.362Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6711687f68c8e292a198e025"
+  },
+  "Id": "order_7rsf3p3wn1729194111394",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 6,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "6711687f68c8e292a198e026"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "6711687f68c8e292a198e027"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "6711687f68c8e292a198e028"
+    }
+  },
+  "totalAmount": 30,
+  "orderDate": {
+    "$date": "2024-10-17T19:41:51.403Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T19:41:51.394Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67116d4468c8e292a198e1a3"
+  },
+  "Id": "order_el93w1rvp1729195332979",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "67116d4468c8e292a198e1a4"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "67116d4468c8e292a198e1a5"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "67116d4468c8e292a198e1a6"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-17T20:02:12.988Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T20:02:12.979Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67116d6068c8e292a198e1f0"
+  },
+  "Id": "order_zjx53dhtd1729195360600",
+  "items": [
+    {
+      "id": "5",
+      "name": " كرانشي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/cranche.jpg",
+      "_id": {
+        "$oid": "67116d6068c8e292a198e1f1"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "67116d6068c8e292a198e1f2"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "67116d6068c8e292a198e1f3"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-17T20:02:40.611Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T20:02:40.600Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67116d9f68c8e292a198e23f"
+  },
+  "Id": "order_l8cxhvc1d1729195423987",
+  "items": [
+    {
+      "id": "5",
+      "name": " كرانشي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 5,
+      "image": "/assets/itemImages/products/snacks/cranche.jpg",
+      "_id": {
+        "$oid": "67116d9f68c8e292a198e240"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "67116d9f68c8e292a198e241"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "67116d9f68c8e292a198e242"
+    }
+  },
+  "totalAmount": 25,
+  "orderDate": {
+    "$date": "2024-10-17T20:03:43.997Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T20:03:43.987Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67116e4a68c8e292a198e290"
+  },
+  "Id": "order_uqwxcgzsu1729195594361",
+  "items": [
+    {
+      "id": "0",
+      "name": "بسكوت لوكس",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 4,
+      "image": "/assets/itemImages/products/snacks/lux.jpg",
+      "_id": {
+        "$oid": "67116e4a68c8e292a198e291"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "67116e4a68c8e292a198e292"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "67116e4a68c8e292a198e293"
+    }
+  },
+  "totalAmount": 20,
+  "orderDate": {
+    "$date": "2024-10-17T20:06:34.369Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T20:06:34.361Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6711708b68c8e292a198e41f"
+  },
+  "Id": "order_gh3idzt151729196171824",
+  "items": [
+    {
+      "id": "3",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 3,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "6711708b68c8e292a198e420"
+      },
+      "margin": 1
+    },
+    {
+      "id": "6",
+      "name": "سندوتش طعميه",
+      "sealprice": 7,
+      "buyprice": 4,
+      "ItemAmount": 3,
+      "image": "/assets/itemImages/products/foods/sandwich3.jpg",
+      "_id": {
+        "$oid": "6711708b68c8e292a198e421"
+      },
+      "margin": 3
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "6711708b68c8e292a198e422"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "6711708b68c8e292a198e423"
+    }
+  },
+  "totalAmount": 36,
+  "orderDate": {
+    "$date": "2024-10-17T20:16:11.835Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T20:16:11.824Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6711730a68c8e292a198e478"
+  },
+  "Id": "order_uvdfahcvl1729196810217",
+  "items": [
+    {
+      "id": "2",
+      "name": "بسكوت ماكفيتس",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 10,
+      "image": "/assets/itemImages/products/snacks/MacVites.png",
+      "_id": {
+        "$oid": "6711730a68c8e292a198e479"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "6711730a68c8e292a198e47a"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "6711730a68c8e292a198e47b"
+    }
+  },
+  "totalAmount": 50,
+  "orderDate": {
+    "$date": "2024-10-17T20:26:50.226Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T20:26:50.217Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67117a08c0d385362d9fc678"
+  },
+  "Id": "order_s0uzjsevt1729198600535",
+  "items": [
+    {
+      "id": "4c5eeb81-f57e-4c8d-8197-954cc247449d",
+      "name": "بيبسي",
+      "sealprice": 15,
+      "buyprice": 14,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/drinks/7449d-pepsi.png",
+      "_id": {
+        "$oid": "67117a08c0d385362d9fc679"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "67117a08c0d385362d9fc67a"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "67117a08c0d385362d9fc67b"
+    }
+  },
+  "totalAmount": 30,
+  "orderDate": {
+    "$date": "2024-10-17T20:56:40.544Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T20:56:40.535Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67117a2bc0d385362d9fc6d3"
+  },
+  "Id": "order_cg46d8u211729198635670",
+  "items": [
+    {
+      "id": "4",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 4,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "67117a2bc0d385362d9fc6d4"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "67117a2bc0d385362d9fc6d5"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "67117a2bc0d385362d9fc6d6"
+    }
+  },
+  "totalAmount": 20,
+  "orderDate": {
+    "$date": "2024-10-17T20:57:15.679Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T20:57:15.670Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67117ba8c0d385362d9fc730"
+  },
+  "Id": "order_e6k3hm4jg1729199016413",
+  "items": [
+    {
+      "id": "4",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 85,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "67117ba8c0d385362d9fc731"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "67117ba8c0d385362d9fc732"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "67117ba8c0d385362d9fc733"
+    }
+  },
+  "totalAmount": 425,
+  "orderDate": {
+    "$date": "2024-10-17T21:03:36.422Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-17T21:03:36.413Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6713c8d58785ea6a5811a1aa"
+  },
+  "Id": "order_34r4ms35y1729349845703",
+  "items": [
+    {
+      "id": "4",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "6713c8d58785ea6a5811a1ab"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "6713c8d58785ea6a5811a1ac"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "6713c8d58785ea6a5811a1ad"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-19T14:57:25.724Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-19T14:57:25.703Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6713fe5140260ae8a1cd7ab1"
+  },
+  "Id": "order_4vgrgveiz1729363537903",
+  "items": [
+    {
+      "id": "4",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "6713fe5140260ae8a1cd7ab2"
+      },
+      "margin": 1
+    },
+    {
+      "id": "3",
+      "name": "بسكوت ماكفيتس",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 4,
+      "image": "/assets/itemImages/products/snacks/MacVites.png",
+      "_id": {
+        "$oid": "6713fe5140260ae8a1cd7ab3"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "6713fe5140260ae8a1cd7ab4"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "6713fe5140260ae8a1cd7ab5"
+    }
+  },
+  "totalAmount": 30,
+  "orderDate": {
+    "$date": "2024-10-19T18:45:37.910Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-19T18:45:37.903Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6713fff816d1c2a964c998cc"
+  },
+  "Id": "order_t92s5pslc1729363960879",
+  "items": [
+    {
+      "id": "4",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "6713fff816d1c2a964c998cd"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "6713fff816d1c2a964c998ce"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "6713fff816d1c2a964c998cf"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-19T18:52:40.887Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-19T18:52:40.879Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67142413f1778dd228945c01"
+  },
+  "Id": "order_2nqdxagpq1729373203552",
+  "items": [
+    {
+      "id": "4",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "67142413f1778dd228945c02"
+      },
+      "margin": 1
+    },
+    {
+      "id": "3",
+      "name": "بسكوت ماكفيتس",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/MacVites.png",
+      "_id": {
+        "$oid": "67142413f1778dd228945c03"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "67142413f1778dd228945c04"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "67142413f1778dd228945c05"
+    }
+  },
+  "totalAmount": 20,
+  "orderDate": {
+    "$date": "2024-10-19T21:26:43.564Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-19T21:26:43.552Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67150a9cf1778dd228945cfa"
+  },
+  "Id": "order_o91dehtvh1729432220879",
+  "items": [
+    {
+      "id": "4",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "67150a9cf1778dd228945cfb"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "67150a9cf1778dd228945cfc"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "67150a9cf1778dd228945cfd"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-20T13:50:20.889Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-20T13:50:20.879Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67150e3ef1778dd228945d85"
+  },
+  "Id": "order_myvpt1eyo1729433150758",
+  "items": [
+    {
+      "id": "4",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "67150e3ef1778dd228945d86"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "67150e3ef1778dd228945d87"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "67150e3ef1778dd228945d88"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-20T14:05:50.767Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-20T14:05:50.758Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6715139cf1778dd228945e57"
+  },
+  "Id": "order_e7apuyd5r1729434524515",
+  "items": [
+    {
+      "id": "4",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "6715139cf1778dd228945e58"
+      },
+      "margin": 1
+    },
+    {
+      "id": "3",
+      "name": "بسكوت ماكفيتس",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/MacVites.png",
+      "_id": {
+        "$oid": "6715139cf1778dd228945e59"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "6715139cf1778dd228945e5a"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "6715139cf1778dd228945e5b"
+    }
+  },
+  "totalAmount": 20,
+  "orderDate": {
+    "$date": "2024-10-20T14:28:44.524Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-20T14:28:44.515Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "671543f1f1778dd228946db8"
+  },
+  "Id": "order_vur01icrt1729446897220",
+  "items": [
+    {
+      "id": "4",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "671543f1f1778dd228946db9"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "671543f1f1778dd228946dba"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "671543f1f1778dd228946dbb"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-20T17:54:57.230Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-20T17:54:57.220Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "671543fef1778dd228946dcf"
+  },
+  "Id": "order_2kmry4sm81729446910524",
+  "items": [
+    {
+      "id": "8",
+      "name": "سندوتش كبدة",
+      "sealprice": 10,
+      "buyprice": 7,
+      "ItemAmount": 3,
+      "image": "/assets/itemImages/products/foods/sandwich.jpg",
+      "_id": {
+        "$oid": "671543fef1778dd228946dd0"
+      },
+      "margin": 3
+    },
+    {
+      "id": "7",
+      "name": "سندوتش طعميه",
+      "sealprice": 7,
+      "buyprice": 4,
+      "ItemAmount": 3,
+      "image": "/assets/itemImages/products/foods/sandwich3.jpg",
+      "_id": {
+        "$oid": "671543fef1778dd228946dd1"
+      },
+      "margin": 3
+    },
+    {
+      "id": "6",
+      "name": " كرانشي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 3,
+      "image": "/assets/itemImages/products/snacks/cranche.jpg",
+      "_id": {
+        "$oid": "671543fef1778dd228946dd2"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "1",
+    "name": "فرع نظم المعلومات ",
+    "_id": {
+      "$oid": "66fad2f99612308a027b6de6"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "671543fef1778dd228946dd4"
+    }
+  },
+  "totalAmount": 66,
+  "orderDate": {
+    "$date": "2024-10-20T17:55:10.534Z"
+  },
+  "paymentType": "Credit",
+  "paymentStatus": "pending",
+  "paymentDate": null,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "671551d6f1778dd2289471d4"
+  },
+  "Id": "order_8hzqtsr3k1729450454165",
+  "items": [
+    {
+      "id": "4",
+      "name": " شبسي",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/chips.jpg",
+      "_id": {
+        "$oid": "671551d6f1778dd2289471d5"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "671551d6f1778dd2289471d6"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "671551d6f1778dd2289471d7"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-20T18:54:14.173Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-20T18:54:14.165Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67175af2f1778dd2289476fe"
+  },
+  "Id": "order_26ott80t91729583858774",
+  "items": [
+    {
+      "id": "1",
+      "name": "بسكوت لوكس",
+      "sealprice": 5,
+      "buyprice": 4,
+      "ItemAmount": 2,
+      "image": "/assets/itemImages/products/snacks/lux.jpg",
+      "_id": {
+        "$oid": "67175af2f1778dd2289476ff"
+      },
+      "margin": 1
+    }
+  ],
+  "customer": {
+    "id": "0",
+    "name": "عميل تجزئة",
+    "_id": {
+      "$oid": "67175af2f1778dd228947700"
+    }
+  },
+  "user": {
+    "id": "9",
+    "name": "admin2",
+    "_id": {
+      "$oid": "67175af2f1778dd228947701"
+    }
+  },
+  "totalAmount": 10,
+  "orderDate": {
+    "$date": "2024-10-22T07:57:38.785Z"
+  },
+  "paymentType": "Cash",
+  "paymentStatus": "paid",
+  "paymentDate": {
+    "$date": "2024-10-22T07:57:38.774Z"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,233 @@
+[{
+  "_id": "66f6dc3199908787fd0c0e97",
+  "category": {
+    "type": "snacks",
+    "displayName": "بسكوت و شبسي",
+    "categoryImage": "/assets/itemImages/Category/snacks.svg"
+  },
+  "id": "1",
+  "image": "snacks/lux.jpg",
+  "name": "بسكوت لوكس",
+  "productamount": {
+    "$numberLong": "3"
+  },
+  "buyprice": "4",
+  "sealprice": "5"
+},
+{
+  "_id": "66f6dc4c99908787fd0c0e99",
+  "category": {
+    "type": "snacks",
+    "displayName": "بسكوت و شبسي",
+    "categoryImage": "/assets/itemImages/Category/snacks.svg"
+  },
+  "id": "2",
+  "image": "snacks/biscrem.jpg",
+  "name": "بسكوت بسكريم",
+  "productamount": {
+    "$numberLong": "-5"
+  },
+  "buyprice": "4",
+  "sealprice": "5"
+},
+{
+  "_id": "66f6dc6199908787fd0c0e9b",
+  "category": {
+    "type": "snacks",
+    "displayName": "بسكوت و شبسي",
+    "categoryImage": "/assets/itemImages/Category/snacks.svg"
+  },
+  "id": "3",
+  "image": "snacks/MacVites.png",
+  "name": "بسكوت ماكفيتس",
+  "productamount": {
+    "$numberLong": "71"
+  },
+  "buyprice": "4",
+  "sealprice": "5"
+},
+{
+  "_id": "66f6dc7c99908787fd0c0e9d",
+  "category": {
+    "type": "snacks",
+    "displayName": "بسكوت و شبسي",
+    "categoryImage": "/assets/itemImages/Category/snacks.svg"
+  },
+  "id": "4",
+  "image": "snacks/chips.jpg",
+  "name": " شبسي",
+  "productamount": {
+    "$numberLong": "-7"
+  },
+  "buyprice": "4",
+  "sealprice": "5"
+},
+{
+  "_id": "66f6dc9399908787fd0c0e9f",
+  "category": {
+    "type": "snacks",
+    "displayName": "بسكوت و شبسي",
+    "categoryImage": "/assets/itemImages/Category/snacks.svg"
+  },
+  "id": "5",
+  "image": "snacks/cono.jpg",
+  "name": " كونو",
+  "productamount": {
+    "$numberLong": "93"
+  },
+  "buyprice": "4",
+  "sealprice": "5"
+},
+{
+  "_id": "66f6dc9f99908787fd0c0ea1",
+  "category": {
+    "type": "snacks",
+    "displayName": "بسكوت و شبسي",
+    "categoryImage": "/assets/itemImages/Category/snacks.svg"
+  },
+  "id": "6",
+  "image": "snacks/cranche.jpg",
+  "name": " كرانشي",
+  "productamount": {
+    "$numberLong": "94"
+  },
+  "buyprice": "4",
+  "sealprice": "5"
+},
+{
+  "_id": "66f6dcaf99908787fd0c0ea3",
+  "category": {
+    "type": "foods",
+    "displayName": "مأكولات",
+    "categoryImage": "/assets/itemImages/Category/FoodColoured.svg"
+  },
+  "id": "7",
+  "image": "foods/sandwich3.jpg",
+  "name": "سندوتش طعميه",
+  "productamount": {
+    "$numberLong": "95"
+  },
+  "buyprice": "4",
+  "sealprice": "7"
+},
+{
+  "_id": "66f6dcbd99908787fd0c0ea5",
+  "category": {
+    "type": "foods",
+    "displayName": "مأكولات",
+    "categoryImage": "/assets/itemImages/Category/FoodColoured.svg"
+  },
+  "id": "8",
+  "image": "foods/sandwich.jpg",
+  "name": "سندوتش كبدة",
+  "productamount": {
+    "$numberLong": "97"
+  },
+  "buyprice": "7",
+  "sealprice": "10"
+},
+{
+  "_id": "66f6dccb99908787fd0c0ea7",
+  "category": {
+    "type": "foods",
+    "displayName": "مأكولات",
+    "categoryImage": "/assets/itemImages/Category/FoodColoured.svg"
+  },
+  "id": "9",
+  "image": "foods/sandwich2.jpg",
+  "name": "سندوتش فول",
+  "productamount": {
+    "$numberLong": "100"
+  },
+  "buyprice": "7",
+  "sealprice": "10"
+},
+{
+  "_id": "66f6dcd899908787fd0c0ea9",
+  "category": {
+    "type": "drinks",
+    "displayName": "مشروبات",
+    "categoryImage": "/assets/itemImages/Category/drinksColoured.svg"
+  },
+  "id": "10",
+  "image": "drinks/tea.png",
+  "name": "شاي",
+  "productamount": {
+    "$numberLong": "100"
+  },
+  "buyprice": "3",
+  "sealprice": "5"
+},
+{
+  "_id": "66f6dd0699908787fd0c0ead",
+  "category": {
+    "type": "drinks",
+    "displayName": "مشروبات",
+    "categoryImage": "/assets/itemImages/Category/drinksColoured.svg"
+  },
+  "id": "12",
+  "image": "drinks/coffebreak.jpg",
+  "name": "كوفي بريك",
+  "productamount": {
+    "$numberLong": "100"
+  },
+  "buyprice": "6",
+  "sealprice": "10"
+},
+{
+  "_id": {
+    "$oid": "66f97a0dad7cb374b068eb69"
+  },
+  "id": "4c5eeb81-f57e-4c8d-8197-954cc247449d",
+  "name": "بيبسي",
+  "image": "drinks/7449d-pepsi.png",
+  "category": {
+    "type": "drinks",
+    "displayName": " مشروبات ",
+    "categoryImage": "/assets/itemImages/Category/drinksColoured.svg"
+  },
+  "productamount": {
+    "$numberLong": "46"
+  },
+  "__v": 0,
+  "buyprice": "14",
+  "sealprice": "15"
+},
+{
+  "_id": {
+    "$oid": "66f980e8ad7cb374b068eb8b"
+  },
+  "id": "fdc54950-3767-4608-a85f-477194e4f1de",
+  "name": "كيس مكرونه قلم ",
+  "image": "foods/4f1de-macarone.png",
+  "category": {
+    "type": "foods",
+    "displayName": " مأكولات ",
+    "categoryImage": "/assets/itemImages/Category/FoodColoured.svg"
+  },
+  "productamount": {
+    "$numberLong": "24"
+  },
+  "__v": 0,
+  "buyprice": "13",
+  "sealprice": "15"
+},
+{
+  "_id": {
+    "$oid": "66f9943f92ed94a39ab0f571"
+  },
+  "id": "fdc7c601-68fe-4607-912e-b45e98179af6",
+  "name": "قهوة تركي",
+  "image": "drinks/79af6-coffe.png",
+  "category": {
+    "type": "drinks",
+    "displayName": " مشروبات ",
+    "categoryImage": "/assets/itemImages/Category/drinksColoured.svg"
+  },
+  "productamount": {
+    "$numberLong": "40"
+  },
+  "__v": 0,
+  "buyprice": "11",
+  "sealprice": "15"
+}]
